@@ -1,0 +1,51 @@
+
+.ctexto{
+    text-align: center;
+
+}
+.ctexto1{
+    color: rgb(79, 79, 197);
+    margin: 30 auto;
+}
+.ctexto2{
+    width: 10%;
+    height: 10%;
+}
+.alicolunas
+{
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+}
+.alicolunas1{
+    font-weight: bold;
+}
+.button{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    background-color:rgb(73, 138, 73);
+    font-size: 17px;
+    width: 175px;
+    height: 30px;
+    margin: 0 auto;
+}
+.formulario{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 15px;
+    font-weight: bold;
+}
+.formdescricao{
+    width: 235px;
+    height:50px;
+    text-align: center;
+}
+footer{ 
+    height: 50px; 
+    width: 100%;
+	background-color: #44b874; 
+	padding:10px 0; 
+	text-align: center; 
+	font-size:12px; 
+	color: #333; 
+    bottom: 0;
+    position: relative;
+}
