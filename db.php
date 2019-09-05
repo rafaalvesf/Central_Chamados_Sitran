@@ -10,9 +10,13 @@ $conexao = mysqli_connect($servidor, $usuario, $senha, $db) or die ('Falha ao co
 $query = "SELECT * FROM Chamados ORDER BY Data_Abertura DESC";
 $consulta_chamados = mysqli_query($conexao, $query);
 
-$query = "SELECT * FROM Chamados INNER JOIN Usuarios WHERE Responsavel_Tecnico = '{$_SESSION['usuario_digitado']}' ORDER BY Data_Abertura DESC";
+$query = "SELECT * FROM Chamados WHERE Responsavel_Tecnico = '{$_SESSION['usuario_digitado']}' ORDER BY Data_Abertura DESC";
 $consulta_chamados1 = mysqli_query($conexao, $query);
 
+$query = "SELECT Tratativa FROM Fechar_Chamado WHERE Id_Chamado_Ref = '{$_GET['tratativa']}'";
+$consulta_tratativa = mysqli_query($conexao, $query);
+
+#consultas de ESTOQUE
 $query = "SELECT * FROM Estoque";
 $consulta_estoque = mysqli_query($conexao, $query);
 
@@ -20,7 +24,7 @@ $query = "SELECT * FROM Lixo";
 $consulta_lixo = mysqli_query($conexao, $query);
 
 $query = "SELECT * FROM Manutencao";			
-$consulta_lixo = mysqli_query($conexao, $query);
+$consulta_manutencao = mysqli_query($conexao, $query);
 
 $query = "SELECT * FROM Usuarios";			
 $consulta_usuarios = mysqli_query($conexao, $query);

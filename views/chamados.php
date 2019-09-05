@@ -28,10 +28,10 @@
             echo '<td class="alicolunas">'.$linha['Prioridade'].'</td>';
             echo '<td class="alicolunas">'.$linha['Status'].'</td>';
 	?>
+        <td><a href="?pagina=abrir_chamado&tratativa=<?php echo $linha['Id_Chamado']; ?>">Tratar</a></td>
 	<?php
-		}
+        }
 	?>
 
 </table>
-
 </div>

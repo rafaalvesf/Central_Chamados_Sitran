@@ -27,7 +27,7 @@
             echo '<td class="alicolunas alicolunas1">'.$linha['Responsavel_Tecnico'].'</td>';
             echo '<td class="alicolunas">'.$linha['Prioridade'].'</td>';
             echo '<td class="alicolunas">'.$linha['Status'].'</td>';
-	?>
+    ?>
 	<?php
 		}
 	?>

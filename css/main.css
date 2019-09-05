@@ -11,6 +11,12 @@
     width: 10%;
     height: 10%;
 }
+
+.ctexto3{
+    color: rgb(29, 10, 1);
+    margin: 30 auto;
+}
+
 .alicolunas
 {
     text-align: center;
@@ -48,4 +54,9 @@ footer{
 	color: #333; 
     bottom: 0;
     position: relative;
+}
+
+.flexstrutura{
+    color: red;
+    float: left;
 }
