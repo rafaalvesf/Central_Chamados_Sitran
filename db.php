@@ -17,7 +17,7 @@ $query = "SELECT Tratativa FROM Fechar_Chamado WHERE Id_Chamado_Ref = '{$_GET['t
 $consulta_tratativa = mysqli_query($conexao, $query);
 }
 #consultas de ESTOQUE
-$query = "SELECT * FROM Estoque";
+$query = "SELECT * FROM Estoque ORDER BY Nome_Produto DESC";
 $consulta_estoque = mysqli_query($conexao, $query);
 
 $query = "SELECT * FROM Lixo";			
@@ -31,4 +31,7 @@ $consulta_usuarios = mysqli_query($conexao, $query);
 
 $query = "SELECT * FROM Entrada_Estoque ORDER BY Id_Entrada DESC limit 5";
 $consulta_entrada_estoque = mysqli_query($conexao, $query);
+
+$query = "SELECT * FROM Saida_Estoque ORDER BY Id_Saida DESC limit 5";
+$consulta_saida_estoque = mysqli_query($conexao, $query);
 ?>

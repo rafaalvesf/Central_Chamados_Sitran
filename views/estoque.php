@@ -15,11 +15,21 @@
             <?php    
 	    while($linha = mysqli_fetch_array($consulta_estoque)){
             echo '<tr><td class="alicolunas alicolunas1">'.$linha['Nome_Produto'].'</td>';
-            echo '<td class="alicolunas alicolunas1">'.$linha['Quantidade_Estocada'].'</td>';
+            if($linha['Quantidade_Estocada'] <= $linha['Quantidade_Minima']){
+            echo '<td class="alicolunas alicolunas1" style="color:red">## '.$linha['Quantidade_Estocada'].' ##</td>';
+            }
+            else{
+            echo '<td class="alicolunas alicolunas1">'.$linha['Quantidade_Estocada'].'</td>';    
+            }
             echo '<td class="alicolunas">'.$linha['Descricao_Produto'].'</td>';
-            echo '<td class="alicolunas alicolunas1">'.$linha['Quantidade_Minima'].'</td>';
+            if($linha['Quantidade_Estocada'] <= $linha['Quantidade_Minima']){
+            echo '<td class="alicolunas alicolunas1" style="color:red">## '.$linha['Quantidade_Minima'].' ##</td>';
+            }
+            else{
+            echo '<td class="alicolunas alicolunas1">'.$linha['Quantidade_Minima'].'</td>';    
+            }
             echo '<td class="alicolunas">'.$linha['Ultima_Retirada'].'</td>';
-            echo '<td class="alicolunas">R$ '.$linha['Valor_aproximado'].'</td>';
+            echo '<td class="alicolunas">R$ '.$linha['Valor_aproximado'].',00</td>';
     ?>
             <td><a href="?pagina=adicionar_estoque&add=<?php echo $linha['Nome_Produto']; ?>"><img src="img/Add.ico" style="width:25px; height:25px"></a></td>
             <td><a href="?pagina=adicionar_estoque&remove=<?php echo $linha['Nome_Produto']; ?>"><img src="img/remov.png" style="width:25px; height:25px"></a></td>
