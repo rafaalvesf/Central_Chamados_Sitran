@@ -21,12 +21,29 @@
 			echo '<tr><td class="alicolunas alicolunas1">'.$linha['Id_Chamado'].'</td>';
             echo '<td class="alicolunas alicolunas1">'.$linha['Titulo_Chamado'].'</td>';
             echo '<td class="alicolunas">'.$linha['Descricao_Chamado'].'</td>';
-            echo '<td class="alicolunas alicolunas1" style="color:blue">'.$linha['Solicitante_Chamado'].'</td>';
+            echo '<td class="alicolunas alicolunas1" style="color:#696969">'.$linha['Solicitante_Chamado'].'</td>';
             echo '<td class="alicolunas">'.$linha['Setor_Solicitante'].'</td>';
             echo '<td class="alicolunas">'.$linha['Data_Abertura'].'</td>';
             echo '<td class="alicolunas alicolunas1">'.$linha['Responsavel_Tecnico'].'</td>';
-            echo '<td class="alicolunas">'.$linha['Prioridade'].'</td>';
-            echo '<td class="alicolunas">'.$linha['Status'].'</td>';
+            if($linha['Prioridade'] == 'ALTA'){
+            echo '<td class="alicolunas" style="color:red; font-weight:bold">'.$linha['Prioridade'].'</td>';
+            };
+            if($linha['Prioridade'] == 'BAIXA'){
+            echo '<td class="alicolunas" style="color:green; font-weight:bold">'.$linha['Prioridade'].'</td>';
+            };
+            if($linha['Prioridade'] == 'MEDIA'){
+            echo '<td class="alicolunas" style="color:gray; font-weight:bold">'.$linha['Prioridade'].'</td>';
+            };     
+
+            if($linha['Status'] == 'ABERTO'){
+            echo '<td class="alicolunas" style="color:green; font-weight:bold">'.$linha['Status'].'</td>';
+            };
+            if($linha['Status'] == 'FECHADO'){
+            echo '<td class="alicolunas" style="color:black; font-weight:bold">'.$linha['Status'].'</td>';
+            };
+            if($linha['Status'] == 'PAUSADO'){
+            echo '<td class="alicolunas" style="color:orange; font-weight:bold">'.$linha['Status'].'</td>';
+            }
 	?>
         <td><a href="?pagina=abrir_chamado&tratativa=<?php echo $linha['Id_Chamado']; ?>">Tratar</a></td>
 	<?php

@@ -23,6 +23,7 @@ switch($pagina){
 	case 'lixo': include 'views/lixo.php'; break;
 	case 'manutencao': include 'views/manutencao.php'; break;
 	case 'abrir_chamado': include 'views/abrir_chamado.php'; break;
+	case 'adicionar_estoque': include 'views/adicionar_estoque.php'; break;
 
 
 	default: include 'views/home.php'; break;
