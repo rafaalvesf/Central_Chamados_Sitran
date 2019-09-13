@@ -10,7 +10,7 @@ exit();
 $usuario = mysqli_real_escape_string($conexao, $_POST['usuario_digitado']);
 $senha = mysqli_real_escape_string($conexao, $_POST['senha_digitada']);
 
-$query = "select Nome_Usuario FROM Usuarios where Nome_Usuario = '{$usuario}' and Senha_Usuario = '{$senha}'";
+$query = "select Nome_Usuario FROM Usuarios where Nome_Usuario = '{$usuario}' and BINARY Senha_Usuario = '{$senha}'";
 
 $result = mysqli_query($conexao, $query);
 $row = mysqli_num_rows($result);

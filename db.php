@@ -28,4 +28,7 @@ $consulta_manutencao = mysqli_query($conexao, $query);
 
 $query = "SELECT * FROM Usuarios";			
 $consulta_usuarios = mysqli_query($conexao, $query);
+
+$query = "SELECT * FROM Entrada_Estoque ORDER BY Id_Entrada DESC limit 5";
+$consulta_entrada_estoque = mysqli_query($conexao, $query);
 ?>
