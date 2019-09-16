@@ -2,7 +2,7 @@
 <div class="ctexto"> 
     <h2 class="ctexto1">MEUS CHAMADOS</h2>
 
-    <a href="?pagina=abrir_chamado" style="text-decoration:none;"><img src="img/add.ico" style="width: 5%; height: 5%; float:right"></a>
+    <a href="?pagina=abrir_chamado" style="text-decoration:none;"><img src="img/add.ico" style="width: 4%; height: 5%; float:right"></a>
 <table border="1" style="border:4px solid #ccc; width: 100%;">
 	<tr>
 		<th>ID</th>
@@ -19,7 +19,7 @@
     <?php    
 		while($linha = mysqli_fetch_array($consulta_chamados1)){
 			echo '<tr><td class="alicolunas alicolunas1">'.$linha['Id_Chamado'].'</td>';
-            echo '<td class="alicolunas alicolunas1">'.$linha['Titulo_Chamado'].'</td>';
+            echo '<td class="alicolunas alicolunas1"><a class="linktitulo" href="?pagina=abrir_chamado&tratativa='.$linha['Id_Chamado'].'">'.$linha['Titulo_Chamado'].'</a></td>';
             echo '<td class="alicolunas">'.$linha['Descricao_Chamado'].'</td>';
             echo '<td class="alicolunas alicolunas1" style="color:#696969">'.$linha['Solicitante_Chamado'].'</td>';
             echo '<td class="alicolunas">'.$linha['Setor_Solicitante'].'</td>';
@@ -45,7 +45,6 @@
             echo '<td class="alicolunas" style="color:orange; font-weight:bold">'.$linha['Status'].'</td>';
             }
 	?>
-        <td><a href="?pagina=abrir_chamado&tratativa=<?php echo $linha['Id_Chamado']; ?>">Tratar</a></td>
 	<?php
         }
 	?>

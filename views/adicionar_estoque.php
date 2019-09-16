@@ -1,9 +1,24 @@
 <?php if(!isset($_GET['add'])&&!isset($_GET['remove'])){ ?>
 
+<script type="text/javascript">
+function validateFormAddItem()
+{
+	var nomeitem = document.forms["form_add_item"]["nome_item"].value;
+	var descricao_item = document.forms["form_add_item"]["descricao_item"].value;
+	var estoque_minimo = document.forms["form_add_item"]["quantidade_minima"].value;
+	if(nomeitem==null||nomeitem==""|| descricao_item==null||descricao_item=="" || estoque_minimo==null||estoque_minimo=="")
+	{
+		alert("Há campos em branco");
+		return false;
+
+	}
+}
+</script>
+
 <div class="ctexto">
-	<h2 class="ctexto1">ADICIONAR ÍTEM NA LISTA</h2>
+	<h2 class="ctexto1">ADICIONAR UM ÍTEM NA LISTA</h2>
 </div>
-<form method="post" action="processa_estoque.php" class="formulario ctexto">
+<form  name="form_add_item" onsubmit="return validateFormAddItem()" method="post" action="processa_estoque.php" class="formulario ctexto">
     <br>
     <label>Nome do Item:</label><br>
     <input type="text" name="nome_item" placeholder="Nome do Item" style="text-transform:uppercase" class="ctexto">

@@ -2,7 +2,7 @@
     <div class="ctexto">
         <h2 class="ctexto1">ESTOQUE SITRAN</h2>
 
-        <a href="?pagina=adicionar_estoque" style="text-decoration:none;"><img src="img/add.ico" style="width: 5%; height: 5%; float:right"></a>
+        <a href="?pagina=adicionar_estoque" style="text-decoration:none;"><img src="img/add.ico" style="width: 4%; height: 5%; float:right"></a>
         <table border="1" style="border:4px solid #ccc; width: 100%;">
             <tr>
                 <th>Produto</th>

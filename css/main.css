@@ -38,11 +38,16 @@
     font-family: 'Times New Roman', Times, serif;
     font-size: 15px;
     font-weight: bold;
+    text-decoration: underline;
+}
+.formulariocolor{
+    color: #D2691E;
 }
 .formdescricao{
     width: 235px;
     height:50px;
     text-align: center;
+
 }
 footer{ 
     height: 50px; 
@@ -57,6 +62,10 @@ footer{
 }
 
 .flexstrutura{
-    color: red;
+    color: #6E6E6E;
     float: left;
+    
+}
+.linktitulo{
+    color: black;
 }

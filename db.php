@@ -6,10 +6,10 @@ $db = "stock";
 
 $conexao = mysqli_connect($servidor, $usuario, $senha, $db) or die ('Falha ao conectar na DATABASE, Deu ruim!');
 
-$query = "SELECT * FROM Chamados ORDER BY Data_Abertura DESC";
+$query = "SELECT * FROM Chamados ORDER BY Id_Chamado DESC";
 $consulta_chamados = mysqli_query($conexao, $query);
 
-$query = "SELECT * FROM Chamados WHERE Responsavel_Tecnico = '{$_SESSION['usuario_digitado']}' ORDER BY Data_Abertura DESC";
+$query = "SELECT * FROM Chamados WHERE Responsavel_Tecnico = '{$_SESSION['usuario_digitado']}' ORDER BY Id_Chamado DESC";
 $consulta_chamados1 = mysqli_query($conexao, $query);
 
 if(isset($_GET['tratativa'])) {
