@@ -44,7 +44,7 @@
             if($linha['Status'] == 'PAUSADO'){
             echo '<td class="alicolunas" style="color:orange; font-weight:bold">'.$linha['Status'].'</td>';
             }
-	?>
+    ?>
 	<?php
         }
 	?>

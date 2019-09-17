@@ -46,6 +46,7 @@
             echo '<td class="alicolunas" style="color:orange; font-weight:bold">'.$linha['Status'].'</td>';
             }
     ?>
+            <td><a href="?pagina=editar_chamado&editar=<?php echo $linha['Id_Chamado'];?>"><img class="logo_edit" src="img/edit.png"></a></td>
 	<?php
 		}
 	?>

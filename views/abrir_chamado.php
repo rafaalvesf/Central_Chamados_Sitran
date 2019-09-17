@@ -132,21 +132,26 @@ function validateForm()
 ?>
             <br>
             <h4 class="ctexto" style="color:#6E6E6E;text-decoration: underline;">Inserir Ações Realizadas</h4>
-            <form method="post" action="processa_fechamento.php" class="formulario">
-            <div style="text-align:center;">
-                <select name="itstatus">
-                    <option>ABERTO</option>
-                    <option>FECHADO</option>
-                    <option>PAUSADO</option>        
-                </select>
-            </div>
+            <form method="post" action="processa_fechamento.php" class="formulario">            
             <br>
             <div style="text-align:center;">
             <input type="text" name="idescricao_tratativa" placeholder="Descreva o procedimento realizado" style="width:80%;height:40px; text-align:center">
             </div><br>
             <div style="text-align:center">
-            <input type="submit" value="Atualizar" class="button">
             <input type="hidden" name="Id_Chamado_Ref" value="<?php echo $_GET['tratativa']?>">
+
+            <div class="d-flex">
+                <div class="btn-group">
+                    <button type="submit" name="itstatus" value="ABERTO" class="btn btn-secondary">Atualizar</button>
+                    <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" id="dropdownMenuReference" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-reference="parent">
+                    <span class="sr-only">Toggle Dropdown</span>
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuReference">
+                    <button class="dropdown-item" type="submit" name="itstatus" value="FECHADO">FECHAR Chamado</button>
+                    <button class="dropdown-item" type="submit" name="itstatus" value="PAUSADO">PAUSAR Chamado</button>
+                </div>
+            </div>
+            </div>
             </div>
             <br>
             </div>
