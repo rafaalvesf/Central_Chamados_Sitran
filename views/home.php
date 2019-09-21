@@ -2,6 +2,10 @@
 <div class="ctexto"> 
     <h2 class="ctexto1">CHAMADOS ABERTOS NO MOMENTO</h2>
 
+    <form  method="post">
+    <input type="submit" value="Exibir Fechados" name="mcheckbox" class="is-white">
+    </form>
+
     <a href="?pagina=abrir_chamado" style="text-decoration:none;"><img src="img/add.ico" style="width: 4%; height: 5%; float:right"></a>
 <table border="1" style="border:4px solid #ccc; width: 100%;">
 	<tr>

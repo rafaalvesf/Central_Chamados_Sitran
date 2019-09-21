@@ -4,14 +4,27 @@ $usuario = "root";
 $senha = "";
 $db = "stock";
 
+
 $conexao = mysqli_connect($servidor, $usuario, $senha, $db) or die ('Falha ao conectar na DATABASE, Deu ruim!');
 
+if(!isset($_POST['mcheckbox'])){
+    $query = "SELECT * FROM Chamados WHERE Status != 'FECHADO' ORDER BY Id_Chamado DESC";
+    $consulta_chamados = mysqli_query($conexao, $query);
+}
+
+else{
 $query = "SELECT * FROM Chamados ORDER BY Id_Chamado DESC";
 $consulta_chamados = mysqli_query($conexao, $query);
+}
 
+if(!isset($_POST['mcheckbox1'])){
+$query = "SELECT * FROM Chamados WHERE Responsavel_Tecnico = '{$_SESSION['usuario_digitado']}' AND Status != 'FECHADO' ORDER BY Id_Chamado DESC";
+$consulta_chamados1 = mysqli_query($conexao, $query);
+}
+else{
 $query = "SELECT * FROM Chamados WHERE Responsavel_Tecnico = '{$_SESSION['usuario_digitado']}' ORDER BY Id_Chamado DESC";
 $consulta_chamados1 = mysqli_query($conexao, $query);
-
+}
 if(isset($_GET['tratativa'])) {
 $query = "SELECT Tratativa FROM Fechar_Chamado WHERE Id_Chamado_Ref = '{$_GET['tratativa']}'";
 $consulta_tratativa = mysqli_query($conexao, $query);

@@ -16,7 +16,6 @@ function validateForm()
     {
         alert("HÁ CAMPOS OBRIGATÓRIOS NÂO PREENCHIDOS");
         return false;
-
     }
 }
 </script>

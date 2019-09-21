@@ -20,7 +20,8 @@
 .alicolunas
 {
     text-align: center;
-    font-family: 'Times New Roman', Times, serif;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 13px;
 }
 .alicolunas1{
     font-weight: bold;
@@ -64,6 +65,18 @@ footer{
 	color: #333; 
     bottom: 0;
     position: relative;
+}
+
+.is-white{
+  float: left;
+  font-family: verdana;
+  font-weight: bold;
+  border-color: transparent;
+  background-color: transparent;
+}
+.is-white:hover{
+  border-color: transparent;
+  background-color: rgb(193, 213, 224);
 }
 
 .flexstrutura{

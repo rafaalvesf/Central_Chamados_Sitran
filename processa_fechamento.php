@@ -6,7 +6,7 @@ $Status_fechamento = $_POST['itstatus'];
 $Descricao_Fechamento = $_POST['idescricao_tratativa'];
 $Id_Referencia = $_POST['Id_Chamado_Ref'];
 
-if($Descricao_Fechamento==null){
+if($Descricao_Fechamento==""){
 
 }
 else{
