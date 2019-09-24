@@ -21,7 +21,7 @@ function validateFormedit()
 			<link rel="stylesheet" href="css/main.css">
     <h2 class="ctexto ctexto1">EDITAR CHAMADO ABERTO</h2>
     <div class="ctexto">
-
+    <?php $designado = $linha['Responsavel_Tecnico'] ?>
     <form name="editar_chamado_form" action="processa_edita_chamado.php" class="formulario" onsubmit="return validateFormedit()" method="post">
     <input type="hidden" name="Id_Chamado" value="<?php echo $linha['Id_Chamado']; ?>">
     <br>
@@ -35,20 +35,31 @@ function validateFormedit()
     <textarea class="form-control" aria-label="With textarea" name="idescricao_chamado" style="width: 175px; height: 50px"><?php echo $linha['Descricao_Chamado']; ?></textarea>
     </div><br><br>
     <label>Solicitante:</label><br>
-    <input class="ctexto" type="text" name="isolicitante" value="<?php echo $linha['Solicitante_Chamado']; ?>" style="text-transform:uppercase"><br><br>
+    <input class="ctexto" type="text" name="isolicitante" value="<?php echo $linha['Solicitante_Chamado']; ?>" style="text-transform:uppercase"><br><br>   
+    <div class="ctexto">
     <label>Setor do Solicitante:</label><br>
-    <input class="ctexto" type="text" name="isetor_solicitante" value="<?php echo $linha['Setor_Solicitante']; ?>" style="text-transform:uppercase"><br><br>
-    
-    <label>Designado à:</label><br>
-    <select name="idesignado">
-        <option><?php echo $linha['Responsavel_Tecnico']; ?></option>
+    <select name="isetor_solicitante">
+        <option><?php echo $linha['Setor_Solicitante']; ?></option>
         <?php
-    while ($linha = mysqli_fetch_array($consulta_usuarios)) {
-        echo '<option value="' . $linha['Nome_Usuario'] . '">' . $linha['Nome_Usuario'] . '</option>';
-    }
+    while ($linha = mysqli_fetch_array($consulta_setores)) {
+        echo '<option class="ctexto" value="' . $linha['Nome_Setor'] . '">' . $linha['Nome_Setor'] . '</option>';
+    };
 
 ?>
    </select><br><br>
+   </div>
+   <div class="ctexto">
+    <label>Designado à:</label><br>
+    <select name="idesignado">
+        <option><?php echo $designado ?></option>
+        <?php
+    while ($linha = mysqli_fetch_array($consulta_usuarios)) {
+        echo '<option value="' . $linha['Nome_Usuario'] . '">' . $linha['Nome_Usuario'] . '</option>';
+    };
+
+?>
+   </select><br><br>
+   </div>
     <label>Prioridade:</label><br>
     <select name="iprioridade">
         <option>MEDIA</option>

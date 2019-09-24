@@ -19,11 +19,15 @@
         <th>Prioridade</th>
         <th>Status</th>
 	</tr>
-
     <?php    
-		while($linha = mysqli_fetch_array($consulta_chamados1)){
+		while($linha = mysqli_fetch_array($consulta_chamados3)){
 			echo '<tr><td class="alicolunas alicolunas1">'.$linha['Id_Chamado'].'</td>';
+            if($linha['Status'] != 'FECHADO'){
             echo '<td class="alicolunas alicolunas1"><a class="linktitulo" href="?pagina=abrir_chamado&tratativa='.$linha['Id_Chamado'].'">'.$linha['Titulo_Chamado'].'</a></td>';
+            }
+            else{
+                echo '<td class="alicolunas alicolunas1"><a class="linktitulo" href="?pagina=listar_fechados&tratativa='.$linha['Id_Chamado'].'">'.$linha['Titulo_Chamado'].'</a></td>';
+            }
             echo '<td class="alicolunas">'.$linha['Descricao_Chamado'].'</td>';
             echo '<td class="alicolunas alicolunas1" style="color:#696969">'.$linha['Solicitante_Chamado'].'</td>';
             echo '<td class="alicolunas">'.$linha['Setor_Solicitante'].'</td>';

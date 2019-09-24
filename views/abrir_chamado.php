@@ -12,7 +12,7 @@ function validateForm()
     var solicitante=document.forms["abrir_chamado_form"]["isolicitante"].value;
     var designado=document.forms["abrir_chamado_form"]["idesignado"].value;
 
-    if(setor==null||setor==""||motivo==null||motivo==""||descricao==null||descricao==""||solicitante==null||solicitante==""||designado=="Selecione um atendente")
+    if(setor=="SETOR DO SOLICITANTE"||motivo==null||motivo==""||descricao==null||descricao==""||solicitante==null||solicitante==""||designado=="Selecione um atendente")
     {
         alert("HÁ CAMPOS OBRIGATÓRIOS NÂO PREENCHIDOS");
         return false;
@@ -35,16 +35,25 @@ function validateForm()
     <textarea class="form-control" aria-label="With textarea" name="idescricao_chamado" style="width: 175px; height: 50px"></textarea>
     </div><br><br>
     <label>Solicitante:</label><br>
+    <?php $linha = mysqli_fetch_array($consulta_setores) ?>
     <input class="ctexto" type="text" name="isolicitante" placeholder="Escreva o Nome do Solicitante" style="text-transform:uppercase"><br><br>
-    <label>Setor do Solicitante:</label><br>
-    <input class="ctexto" type="text" name="isetor_solicitante" placeholder="Escreva o Setor do Solicitante" style="text-transform:uppercase"><br><br>
+    <label>Setor do Solicitante:</label><br> <td><a href="?pagina=adicionar_setores&add=<?php echo $linha['Nome_Setor']; ?>"><img src="img/Add.ico" style="width:15px; height:15px"></a></td>  
+    <select name="isetor_solicitante">
+        <option>SETOR DO SOLICITANTE</option>
+        <?php
+    while ($linha = mysqli_fetch_array($consulta_setores)) {
+        echo '<option class="ctexto" value="' . $linha['Nome_Setor'] . '">' . $linha['Nome_Setor'] . '</option>';
+    }
+
+?>
+   </select><br><br>
     
     <label>Designado à:</label><br>
     <select name="idesignado">
         <option>Selecione um atendente</option>
         <?php
     while ($linha = mysqli_fetch_array($consulta_usuarios)) {
-        echo '<option value="' . $linha['Nome_Usuario'] . '">' . $linha['Nome_Usuario'] . '</option>';
+        echo '<option class="ctexto" value="' . $linha['Nome_Usuario'] . '">' . $linha['Nome_Usuario'] . '</option>';
     }
 
 ?>
@@ -138,7 +147,6 @@ function validateForm()
             </div><br>
             <div style="text-align:center">
             <input type="hidden" name="Id_Chamado_Ref" value="<?php echo $_GET['tratativa']?>">
-
             <div class="d-flex">
                 <div class="btn-group">
                     <button type="submit" name="itstatus" value="ABERTO" class="btn btn-secondary">Atualizar</button>
@@ -148,9 +156,10 @@ function validateForm()
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuReference">
                     <button class="dropdown-item" type="submit" name="itstatus" value="FECHADO">FECHAR Chamado</button>
                     <button class="dropdown-item" type="submit" name="itstatus" value="PAUSADO">PAUSAR Chamado</button>
+                    </div>
                 </div>
             </div>
-            </div>
+
             </div>
             <br>
             </div>
