@@ -9,7 +9,11 @@ $Senha_logada = $_SESSION['senha_digitada'];
 
 if($Senha_antiga == $Senha_logada && $Senha_nova==$ConfSenha_nova){
     $query = "UPDATE Usuarios SET Senha_Usuario = '$Senha_nova' WHERE Nome_Usuario = '$Usuario_logado'";
-}
+
 
 mysqli_query($conexao, $query);
-header('location:home.php');
+header('location:index.php');
+}
+else{
+    header('location:home.php');
+}
