@@ -79,6 +79,23 @@ footer{
   background-color: rgb(193, 213, 224);
 }
 
+.is-white1{
+  float: right;
+  margin-right: 15.5%;
+  font-family: verdana;
+  font-weight: bold;
+  text-decoration: none;
+  color: grey;
+  font-size: 11px;
+  border-color: transparent;
+  background-color: transparent;
+}
+.is-white1:hover{
+  border-color: transparent;
+  background-color: rgb(193, 213, 224);
+}
+
+
 .flexstrutura{
     color: #6E6E6E;
     float: left;

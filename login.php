@@ -17,6 +17,7 @@ $row = mysqli_num_rows($result);
 
 if($row == 1){
 	$_SESSION['usuario_digitado'] = $usuario;
+	$_SESSION['senha_digitada']= $senha;
 	header('Location: home.php');
 	exit();	
 } else{

@@ -24,8 +24,9 @@
 			</div>			
 		</div>
 	</header>
+	<a  class="is-white1" href="?pagina=alterar_senha">Alterar minha senha</a>
 	<div id="conteudo" class="container">
 		<div>
-		<a href="logout.php"><img src="img/logout.png" style="float:right; width:30px; height: 30px;"></a>			
+		<a href="logout.php"><img src="img/logout.png" style="float:right; width:30px; height: 30px;"></a>	
 		</div>
 </html>
