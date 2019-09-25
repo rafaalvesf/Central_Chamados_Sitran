@@ -13,10 +13,12 @@
 <body>
 	<header>
 		<div class="container">
+		
+			<a  class="is-white1" href="?pagina=alterar_senha">Alterar minha senha</a>
 			<a href="?pagina=home" class="logo">
-            <img src="img/oie_transparent.png" title="Logo" alt="Logo" width="140" height="93">
-            </a>
-			<div id="menu">
+            <img src="img/oie_transparent.png" title="Logo" alt="Logo" width="110" height="73">
+			</a>
+			<div id="menu" class="ctexto">
 				<a href="?pagina=chamados">Meus Chamados</a>
 				<a href="?pagina=estoque">Estoque</a>
 				<a href="?pagina=lixo">Lixo Eletrônico</a>
@@ -25,7 +27,7 @@
 		</div>
 	</header>
 	<div class="container">
-	<a  class="is-white1" href="?pagina=alterar_senha">Alterar minha senha</a>
+
 	</div>
 	<div id="conteudo" class="container">
 		<div>

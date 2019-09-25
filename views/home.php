@@ -1,15 +1,15 @@
 <link rel="stylesheet" href="css/main.css">
 <div class="ctexto"> 
     
-    <h2 class="ctexto1">CHAMADOS ABERTOS NO MOMENTO</h2>
+    <h3 class="ctexto1">CHAMADOS ABERTOS NO MOMENTO</h3>
 
     <form  method="post">
     <input type="submit" value="Exibir Fechados" name="mcheckbox" class="is-white">
     </form>
 
-    <a href="?pagina=abrir_chamado" style="text-decoration:none;"><img src="img/add.ico" style="width: 4%; height: 4%; float:right"></a>
-<table border="1" style="border:4px solid #ccc; width: 100%;">
-	<tr>
+    <a href="?pagina=abrir_chamado" style="text-decoration:none;"><img src="img/add.ico" class="iconadd"></a>
+<table border="0.5" class="table table-hover">
+	<tr class="thead-dark">
 		<th>ID</th>
 		<th>Motivo</th>
 		<th>Descrição</th>
@@ -19,13 +19,14 @@
         <th>Responsável</th>
         <th>Prioridade</th>
         <th>Status</th>
+        <th></th>
 	</tr>
 
     <?php    
 		while($linha = mysqli_fetch_array($consulta_chamados2)){
             echo '<tr><td class="alicolunas alicolunas1">'.$linha['Id_Chamado'].'</td>';
             if($linha['Status'] != 'FECHADO'){
-            echo '<td class="alicolunas alicolunas1">'.$linha['Titulo_Chamado'].'</td>';
+            echo '<td class="alicolunas alicolunas1 largtable">'.$linha['Titulo_Chamado'].'</td>';
             }
             else{
                 echo '<td class="alicolunas alicolunas1"><a class="linktitulo" href="?pagina=listar_fechados&tratativa='.$linha['Id_Chamado'].'">'.$linha['Titulo_Chamado'].'</a></td>';

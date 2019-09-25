@@ -15,23 +15,25 @@ function validateFormAddItem()
 }
 </script>
 
+<div class="backformulario">
 <div class="ctexto">
-	<h2 class="ctexto1">ADICIONAR UM ÍTEM NA LISTA</h2>
+	<h3 class="ctexto1">ADICIONAR UM ÍTEM NA LISTA</h3>
 </div>
 <form  name="form_add_item" onsubmit="return validateFormAddItem()" method="post" action="processa_estoque.php" class="formulario ctexto">
     <br>
     <label>Nome do Item:</label><br>
-    <input type="text" name="nome_item" placeholder="Nome do Item" style="text-transform:uppercase" class="ctexto">
+    <input type="text" name="nome_item" placeholder="Nome do Item" style="text-transform:uppercase" class="ctexto backformularioinput">
     <br><br>
-    <label>Descrição:</label><br>
-    <input type="text" name="descricao_item" placeholder="Descreva o item a ser adicionado" class="formdescricao" style="text-transform:uppercase"><br><br>
+	<label>Descrição:</label><br>
+	<textarea class="form-control backformularioinput" aria-label="With textarea" name="descricao_item" style="height: 60px" placeholder="Descreva o item a ser adicionado" style="text-transform:uppercase"></textarea><br><br>
     <label>Estoque Mínimo:</label><br>
-    <input type="number" name="quantidade_minima" class="ctexto"><br><br>
+    <input type="number" name="quantidade_minima" class="ctexto backformularioinput"><br><br>
     <br><br>    
     <div class="ctexto">
     <input type="submit" value="Salvar" class="button">
     </div>
 </form>
+</div>
 
 
 <?php } else if(isset($_GET['add'])) { ?>
@@ -39,12 +41,12 @@ function validateFormAddItem()
 		<?php if($linha['Nome_Produto'] == $_GET['add']){ ?>
 
 			<div class="ctexto">
-				<h2 class="ctexto1">ENTRADA DE PRODUTO NO ESTOQUE</h2>
+				<h3 class="ctexto1">ENTRADA DE PRODUTO NO ESTOQUE</h3>
 			</div>
 			<div>
-			<h3 class="ctexto">Últimas Entradas de Produtos</h3>
-			<table border="1" style="border:4px solid #ccc; width: 100%;">
-            <tr>
+			<h4 class="ctexto">Últimas Entradas de Produtos</h4>
+			<table border="0.5" class="table table-hover">
+            <tr class="thead-dark">
                 <th>ID</th>
                 <th>Produto</th>
                 <th>Quantidade</th>
@@ -65,25 +67,26 @@ function validateFormAddItem()
 			</table>
 			<br><br><br>
 			</div>
-			<div class="ctexto">
+			<div class="backformulario">
+			<div class="ctexto ctexto1">
 				<h4>Adicionando <?php echo $linha['Nome_Produto']?> ao estoque.</h4>
 			</div>
 			<form method="post" action="processa_estoqueADD.php" class="formulario ctexto">
     			<br>
     			<label>Quantidade:</label><br>
-    			<input type="NUMBER" name="quantidadeee" value="1" class="ctexto">
+    			<input type="NUMBER" name="quantidadeee" value="1" class="ctexto backformularioinput">
     			<br><br>
 				<label>Estoque Mínimo Necessário(ATUAL):</label><br>
-    			<input type="number" name="quantidade_minimaee" value="<?php echo $linha['Quantidade_Minima']?>" class="ctexto"><br><br>
+    			<input type="number" name="quantidade_minimaee" value="<?php echo $linha['Quantidade_Minima']?>" class="ctexto backformularioinput"><br><br>
     			<label>Valor Aproximado (UND):</label><br>
-				R$<input type="number" name="valor_aproximadoee" class="ctexto"><br><br>
+				R$<input type="number" name="valor_aproximadoee" class="ctexto backformularioinput" style="width:195px"><br><br>
 				<label>Fornecedor:</label><br>
-				<input type="text" name="fornecedoree" class="ctexto" placeholder="Escreva o Nome do Fornecedor"  style="text-transform:uppercase"><br><br>
+				<input type="text" name="fornecedoree" class="ctexto backformularioinput" placeholder="Escreva o Nome do Fornecedor"  style="text-transform:uppercase"><br><br>
 				<label>Motivo da Compra:</label><br>
     			<div class="input-group">
         			<div class="input-group-prepend">
     			</div>
-    			<textarea class="form-control" aria-label="With textarea" name="descricaoee"></textarea>
+    			<textarea class="backformularioinput" style="height:50px" aria-label="With textarea" name="descricaoee"></textarea>
     			</div><br><br>
 				<input type="hidden" name="nome_produtoee" value="<?php echo $linha['Nome_Produto']?>">
 				<br><br>    				
@@ -91,18 +94,19 @@ function validateFormAddItem()
     			<input type="submit" value="Salvar" class="button"><br><br>
     			</div>
 			</form>
+			</div>
 		<?php } ?>
 	<?php } ?>
 <?php } else { while($linha = mysqli_fetch_array($consulta_estoque)){ ?>
 		<?php if($linha['Nome_Produto'] == $_GET['remove']){ ?>
 			
 			<div class="ctexto">
-				<h2 class="ctexto1">SAÍDA DE PRODUTO NO ESTOQUE</h2>
+				<h3 class="ctexto1">SAÍDA DE PRODUTO NO ESTOQUE</h3>
 			</div>
 			<div>
-			<h3 class="ctexto">Últimas Saídas de Produtos</h3>
-			<table border="1" style="border:4px solid #ccc; width: 100%;">
-            <tr>
+			<h4 class="ctexto">Últimas Saídas de Produtos</h4>
+			<table border="0.5" class="table table-hover">
+            <tr class="thead-dark">
                 <th>ID</th>
                 <th>Produto</th>
                 <th>Quantidade</th>
@@ -125,23 +129,34 @@ function validateFormAddItem()
 			</table>
 			<br><br><br>
 			</div>
-			<div class="ctexto">
+			<div class="backformulario">
+			<div class="ctexto ctexto1">
 				<h4>Retirando <?php echo $linha['Nome_Produto']?> do estoque.</h4>
 			</div>
 			<form method="post" action="processa_estoqueEXC.php" class="formulario ctexto">
     			<br>
     			<label>Quantidade:</label><br>
-    			<input type="NUMBER" name="quantidadese" value="1" class="ctexto">
+    			<input type="NUMBER" name="quantidadese" value="1" class="ctexto backformularioinput">
     			<br><br>
 				<label>Solicitante:</label><br>
-				<input type="text" name="solicitantese" class="ctexto" placeholder="Escreva o Nome do Solicitante"  style="text-transform:uppercase"><br><br>
+				<input type="text" name="solicitantese" class="ctexto backformularioinput" placeholder="Escreva o Nome do Solicitante"  style="text-transform:uppercase"><br><br>
 				<label>Setor do Solicitante:</label><br>
-				<input type="text" name="setorse" class="ctexto" placeholder="Escreva o Nome do setor"  style="text-transform:uppercase"><br><br>
+
+				<select name="setorse" class="backformularioinput">
+        			<option>SETOR DO SOLICITANTE</option>
+        				<?php
+    						while ($linha = mysqli_fetch_array($consulta_setores)) {
+        					echo '<option class="ctexto" value="' . $linha['Nome_Setor'] . '">' . $linha['Nome_Setor'] . '</option>';
+    					}
+
+						?>
+				   </select>
+				   <br><br>
 				<label>Motivo da Saída:</label><br>
     			<div class="input-group">
         			<div class="input-group-prepend">
     			</div>
-    			<textarea class="form-control" aria-label="With textarea" name="descricaose"></textarea>
+    			<textarea class="backformularioinput" style="height:50px" aria-label="With textarea" name="descricaose"></textarea>
     			</div><br><br>
 				<input type="hidden" name="nome_produtose" value="<?php echo $linha['Nome_Produto']?>">
 				<br><br>    				
@@ -149,6 +164,7 @@ function validateFormAddItem()
     			<input type="submit" value="Salvar" class="button"><br><br>
     			</div>
 			</form>
+		</div>
 		<?php } ?>	
 	<?php } ?>
 <?php } ?>

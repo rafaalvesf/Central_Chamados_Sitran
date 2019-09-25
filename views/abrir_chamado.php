@@ -19,26 +19,26 @@ function validateForm()
     }
 }
 </script>
-
+<div class="backformulario">
 <link rel="stylesheet" href="css/main.css">
-<h2 class="ctexto ctexto1">ABRIR NOVO CHAMADO</h2>
+<h3 class="ctexto ctexto1">ABRIR NOVO CHAMADO</h3>
 <div class="ctexto">
     <form name="abrir_chamado_form"action="processa_chamado.php" class="formulario" onsubmit="return validateForm()" method="post">
     <br>
     <label>Motivo:</label><br>
-    <input class="ctexto" type="text" name="imotivo" placeholder="Insira o motivo do chamado" style="text-transform:uppercase">
+    <input class="ctexto backformularioinput" type="text" name="imotivo" placeholder="Insira o motivo do chamado" style="text-transform:uppercase">
     <br><br>
     <label>Descrição de Chamado:</label><br>
     <div class="input-group">
         <div class="input-group-prepend">
     </div>
-    <textarea class="form-control" aria-label="With textarea" name="idescricao_chamado" style="width: 175px; height: 50px"></textarea>
+    <textarea class="form-control backformularioinput" aria-label="With textarea" name="idescricao_chamado" style="height: 50px"></textarea>
     </div><br><br>
     <label>Solicitante:</label><br>
     <?php $linha = mysqli_fetch_array($consulta_setores) ?>
-    <input class="ctexto" type="text" name="isolicitante" placeholder="Escreva o Nome do Solicitante" style="text-transform:uppercase"><br><br>
+    <input class="ctexto backformularioinput" type="text" name="isolicitante" placeholder="Escreva o Nome do Solicitante" style="text-transform:uppercase"><br><br>
     <label>Setor do Solicitante:</label><br> <td><a href="?pagina=adicionar_setores&add=<?php echo $linha['Nome_Setor']; ?>"><img src="img/Add.ico" style="width:15px; height:15px"></a></td>  
-    <select name="isetor_solicitante">
+    <select name="isetor_solicitante" class="backformularioinput">
         <option>SETOR DO SOLICITANTE</option>
         <?php
     while ($linha = mysqli_fetch_array($consulta_setores)) {
@@ -49,7 +49,7 @@ function validateForm()
    </select><br><br>
     
     <label>Designado à:</label><br>
-    <select name="idesignado">
+    <select name="idesignado" class="backformularioinput">
         <option>Selecione um atendente</option>
         <?php
     while ($linha = mysqli_fetch_array($consulta_usuarios)) {
@@ -59,7 +59,7 @@ function validateForm()
 ?>
    </select><br><br>
     <label>Prioridade:</label><br>
-    <select name="iprioridade">
+    <select name="iprioridade" class="backformularioinput" style="width:70px">
         <option>MEDIA</option>
         <option>ALTA</option>
         <option>BAIXA</option>        
@@ -70,6 +70,7 @@ function validateForm()
     </div>
 </form>
 </div>
+</div>
 <?php
 } else {
 ?>
@@ -79,11 +80,13 @@ function validateForm()
    <?php
         if ($linha['Id_Chamado'] == $_GET['tratativa']) {
 ?>
-       <h2 class="ctexto ctexto1"> TRATATIVA DO CHAMADO #<?php
+
+       <h3 class="ctexto ctexto1"> TRATATIVA DO CHAMADO #<?php
             echo $linha['Id_Chamado'];
-?> </h2>
+?> </h3>
         <br>
         <div style="border:4px solid #ccc; width: 100%;">
+        <div class="colorform">
             <h3 class="ctexto ctexto3"><?php
             echo $linha['Titulo_Chamado'];
 ?></h3>    <br><br>
@@ -164,6 +167,7 @@ function validateForm()
             <br>
             </div>
         </form>
+        </div>
     <?php
         }
 ?>

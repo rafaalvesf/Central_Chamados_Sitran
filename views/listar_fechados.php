@@ -4,11 +4,12 @@
    <?php
         if ($linha['Id_Chamado'] == $_GET['tratativa']) {
 ?>
-       <h2 class="ctexto ctexto1"> TRATATIVAS REALIZADAS NO CHAMADO #<?php
+       <h3 class="ctexto ctexto1"> TRATATIVAS REALIZADAS NO CHAMADO #<?php
             echo $linha['Id_Chamado'];
-?> </h2>
+?> </h3>
         <br>
         <div style="border:4px solid #ccc; width: 100%;">
+        <div class="colorform">
             <h3 class="ctexto ctexto3"><?php
             echo $linha['Titulo_Chamado'];
 ?></h3>    <br><br>
@@ -77,6 +78,7 @@
             <br>
             </div>
         </form>
+                </div>
     <?php
         }
 ?>

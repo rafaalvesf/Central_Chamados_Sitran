@@ -1,16 +1,18 @@
 <link rel="stylesheet" href="css/main.css">
     <div class="ctexto">
-        <h2 class="ctexto1">ESTOQUE SITRAN</h2>
+        <h3 class="ctexto1">ESTOQUE SITRAN</h3>
 
-        <a href="?pagina=adicionar_estoque" style="text-decoration:none;"><img src="img/add.ico" style="width: 4%; height: 5%; float:right"></a>
-        <table border="1" style="border:4px solid #ccc; width: 100%;">
-            <tr>
+        <a href="?pagina=adicionar_estoque" style="text-decoration:none;"><img src="img/add.ico" class="iconadd"></a>
+        <table border="0.5" class="table table-hover">
+            <tr class="thead-dark">
                 <th>Produto</th>
                 <th>Quantidade</th>
                 <th>Descrição dos Produtos</th>
                 <th>Estoque Mínimo</th>
                 <th>Ultima Retirada</th>
                 <th>Valor Total do Estoque</th>
+                <th></th>
+                <th></th>
             </tr>
             <?php    
 	    while($linha = mysqli_fetch_array($consulta_estoque)){

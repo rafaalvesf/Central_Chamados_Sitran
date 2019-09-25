@@ -1,14 +1,14 @@
 <link rel="stylesheet" href="css/main.css">
 <div class="ctexto"> 
-    <h2 class="ctexto1">MEUS CHAMADOS</h2>
+    <h3 class="ctexto1">MEUS CHAMADOS</h3>
 
     <form  method="post">
     <input type="submit" value="Exibir Fechados" name="mcheckbox1" class="is-white">
     </form>
 
-    <a href="?pagina=abrir_chamado" style="text-decoration:none;"><img src="img/add.ico" style="width: 4%; height: 4%; float:right"></a>
-<table border="1" style="border:4px solid #ccc; width: 100%;">
-	<tr>
+    <a href="?pagina=abrir_chamado" style="text-decoration:none;"><img src="img/add.ico" class="iconadd"></a>
+<table border="0.5" class="table table-hover">
+	<tr class="thead-dark">
 		<th>ID</th>
 		<th>Motivo</th>
 		<th>Descrição</th>

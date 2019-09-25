@@ -1,6 +1,6 @@
 <link rel="stylesheet" href="css/main.css">
 <div class="ctexto"> 
-    <h2 class="ctexto1">EM MANUTENÇÃO</h2>
+    <h3 class="ctexto1">EM MANUTENÇÃO</h3>
     <img src="img/image.png">
 
    
