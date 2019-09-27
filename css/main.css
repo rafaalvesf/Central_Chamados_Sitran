@@ -48,13 +48,32 @@
     text-decoration: underline;
 }
 .formulariocolor{
-    color: #D2691E;
+    color: black;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 12px;
 }
+
+.tratativaletter{
+  color: transparent;
+  background: #666666;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+  text-shadow: 0px 3px 3px rgba(255,255,255,0.5);
+}
+
 .formdescricao{
     width: 235px;
     height:50px;
     text-align: center;
-
+}
+.bordertratativa{
+  border:4px solid #ccc; 
+  width: 100%;
+}
+.displaytratativa{
+  display: flex;
+  text-align:center;
 }
 footer{ 
     height: 30px; 
@@ -98,7 +117,7 @@ footer{
 
 
 .flexstrutura{
-    color: #6E6E6E;
+    margin: 0 auto;
     float: left;
     
 }
@@ -1551,6 +1570,7 @@ table {
   padding: 12px;
   margin: 0 auto;
   border-radius: 2%;
+  box-shadow: -7px 7px 16px -2px rgba(0,0,0,0.75);
 }
 .backformularioinput{
   width: 215px;
@@ -1568,5 +1588,15 @@ table {
   background-image: linear-gradient(to right top, #909090, #a4a4a4, #b8b8b8, #cdcdcd, #e2e2e2, #e2e2e2, #e2e2e2, #e2e2e2, #cdcdcd, #b8b8b8, #a4a4a4, #909090);
   padding: 12px;
   margin: 0 auto;
+  box-shadow: -7px 7px 16px -2px rgba(0,0,0,0.75);
 
+}
+
+.table{
+  box-shadow: -7px 7px 16px -2px rgba(0,0,0,0.75);
+}
+
+.tablesetores{
+  width:500px;
+  margin:0 auto;
 }
