@@ -1600,28 +1600,3 @@ table {
   width:500px;
   margin:0 auto;
 }
-
-.user-button{
-  width: 100%;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-size: 12px;
-  text-decoration: none;
-}
-
-.user-button:hover{
-  width: 72%;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-size: 12px;
-  background-color: rgb(226, 226, 226);
-}
-
-.is-white2{
-  float: right;
-  font-family: verdana;
-  font-weight: bold;
-  text-decoration: none;
-  color: grey;
-  font-size: 11px;
-  border-color: transparent;
-  background-color: transparent;
-}

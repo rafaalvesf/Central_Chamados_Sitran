@@ -35,7 +35,7 @@ if(isset($_GET['tratativa'])) {
 $query = "SELECT Tratativa FROM Fechar_Chamado WHERE Id_Chamado_Ref = '{$_GET['tratativa']}'";
 $consulta_tratativa = mysqli_query($conexao, $query);
 }
-
+#consultas de ESTOQUE
 $query = "SELECT * FROM Estoque ORDER BY Nome_Produto DESC";
 $consulta_estoque = mysqli_query($conexao, $query);
 
@@ -47,10 +47,6 @@ $consulta_manutencao = mysqli_query($conexao, $query);
 
 $query = "SELECT * FROM Usuarios";			
 $consulta_usuarios = mysqli_query($conexao, $query);
-
-$query = "SELECT * FROM Usuarios WHERE Nome_Usuario = '{$_SESSION['usuario_digitado']}' AND Perfil = 1";			
-$consulta_administradores = mysqli_query($conexao, $query);
-
 
 $query = "SELECT * FROM Setores ORDER BY Nome_Setor";			
 $consulta_setores = mysqli_query($conexao, $query);
