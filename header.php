@@ -13,8 +13,20 @@
 <body>
 	<header>
 		<div class="container">
-		
-			<a  class="is-white1" href="?pagina=alterar_senha">Alterar minha senha</a>
+			<div class="btn-group is-white1">
+                    <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" id="dropdownMenuReference" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-reference="parent">
+                    <span class="sr-only">Toggle Dropdown</span>
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuReference">
+                    <a  class="dropdown-item user-button" href="?pagina=alterar_senha">Alterar minha senha</a>
+                    <button class="dropdown-item" type="submit" name="itstatus" value="PAUSADO">PAUSAR Chamado</button>
+                    </div>
+                </div>
+			<label class="is-white2"> Olá <?php echo $_SESSION['usuario_digitado']?> &nbsp</label>
+			<div class="dropdown-menu" aria-labelledby="dropdownMenuReference">
+                    <button class="dropdown-item" type="submit" name="itstatus" value="FECHADO">FECHAR Chamado</button>
+                    <button class="dropdown-item" type="submit" name="itstatus" value="PAUSADO">PAUSAR Chamado</button>
+                    </div>
 			<a href="?pagina=home" class="logo">
             <img src="img/oie_transparent.png" title="Logo" alt="Logo" width="110" height="73">
 			</a>
