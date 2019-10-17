@@ -56,10 +56,15 @@ function validateFormAddItem()
             </tr>
             <?php    
 	    	while($linha1 = mysqli_fetch_array($consulta_entrada_estoque)){
+
+				$datab = new DateTime($linha1['Data_Entrada']);
+				$dataa = new DateTime();
+				$intervalo = $datab->diff($dataa);
+
             echo '<tr><td class="alicolunas alicolunas1">'.$linha1['Id_Entrada'].'</td>';
             echo '<td class="alicolunas alicolunas1">'.$linha1['Nome_Produto'].'</td>';
             echo '<td class="alicolunas">'.$linha1['Quantidade'].'</td>';
-            echo '<td class="alicolunas alicolunas1">'.$linha1['Data_Entrada'].'</td>';
+            echo '<td class="alicolunas alicolunas1">'.$intervalo->format('%R%a dias %H:%I').'</td>';
             echo '<td class="alicolunas">'.$linha1['Fornecedor'].'</td>';
 			echo '<td class="alicolunas">'.$linha1['Descricao'].'</td>';
 			}
@@ -117,10 +122,15 @@ function validateFormAddItem()
             </tr>
             <?php    
 	    	while($linha1 = mysqli_fetch_array($consulta_saida_estoque)){
+			
+			$datab = new DateTime($linha1['Data_Saida']);
+			$dataa = new DateTime();
+			$intervalo = $datab->diff($dataa);	
+				
             echo '<tr><td class="alicolunas alicolunas1">'.$linha1['Id_Saida'].'</td>';
             echo '<td class="alicolunas alicolunas1">'.$linha1['Nome_Produto'].'</td>';
             echo '<td class="alicolunas">'.$linha1['Quantidade'].'</td>';
-            echo '<td class="alicolunas alicolunas1">'.$linha1['Data_Saida'].'</td>';
+            echo '<td class="alicolunas alicolunas1">'.$intervalo->format('%R%a dias %H:%I').'</td>';
             echo '<td class="alicolunas">'.$linha1['Solicitante'].'</td>';
 			echo '<td class="alicolunas">'.$linha1['Setor_Solicitante'].'</td>';
 			echo '<td class="alicolunas">'.$linha1['Motivo'].'</td>';
@@ -134,6 +144,7 @@ function validateFormAddItem()
 				<h4>Retirando <?php echo $linha['Nome_Produto']?> do estoque.</h4>
 			</div>
 			<form method="post" action="processa_estoqueEXC.php" class="formulario ctexto">
+			<input type="hidden" name="nome_produtose" value="<?php echo $linha['Nome_Produto']?>">
     			<br>
     			<label>Quantidade:</label><br>
     			<input type="NUMBER" name="quantidadese" value="1" class="ctexto backformularioinput">
@@ -158,7 +169,6 @@ function validateFormAddItem()
     			</div>
     			<textarea class="backformularioinput" style="height:50px" aria-label="With textarea" name="descricaose"></textarea>
     			</div><br><br>
-				<input type="hidden" name="nome_produtose" value="<?php echo $linha['Nome_Produto']?>">
 				<br><br>    				
     			<div class="ctexto">
     			<input type="submit" value="Salvar" class="button"><br><br>

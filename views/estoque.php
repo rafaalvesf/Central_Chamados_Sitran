@@ -16,6 +16,10 @@
             </tr>
             <?php    
 	    while($linha = mysqli_fetch_array($consulta_estoque)){
+            $datab = new DateTime($linha['Ultima_Retirada']);
+            $dataa = new DateTime();
+            $intervalo = $datab->diff($dataa);
+
             echo '<tr><td class="alicolunas alicolunas1">'.$linha['Nome_Produto'].'</td>';
             if($linha['Quantidade_Estocada'] <= $linha['Quantidade_Minima']){
             echo '<td class="alicolunas alicolunas1" style="color:red">## '.$linha['Quantidade_Estocada'].' ##</td>';
@@ -30,7 +34,7 @@
             else{
             echo '<td class="alicolunas alicolunas1">'.$linha['Quantidade_Minima'].'</td>';    
             }
-            echo '<td class="alicolunas">'.$linha['Ultima_Retirada'].'</td>';
+            echo '<td class="alicolunas">'.$intervalo->format('%R%a dias %H:%I').'</td>';
             echo '<td class="alicolunas">R$ '.$linha['Valor_aproximado'].',00</td>';
     ?>
             <td><a href="?pagina=adicionar_estoque&add=<?php echo $linha['Nome_Produto']; ?>"><img src="img/Add.ico" style="width:25px; height:25px"></a></td>

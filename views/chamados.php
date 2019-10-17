@@ -21,6 +21,10 @@
 	</tr>
     <?php    
 		while($linha = mysqli_fetch_array($consulta_chamados3)){
+            $datab = new DateTime($linha['Data_Abertura']);
+            $dataa = new DateTime();
+            $intervalo = $datab->diff($dataa);
+
 			echo '<tr><td class="alicolunas alicolunas1">'.$linha['Id_Chamado'].'</td>';
             if($linha['Status'] != 'FECHADO'){
             echo '<td class="alicolunas alicolunas1"><a class="linktitulo" href="?pagina=abrir_chamado&tratativa='.$linha['Id_Chamado'].'">'.$linha['Titulo_Chamado'].'</a></td>';
@@ -29,9 +33,9 @@
                 echo '<td class="alicolunas alicolunas1"><a class="linktitulo" href="?pagina=listar_fechados&tratativa='.$linha['Id_Chamado'].'">'.$linha['Titulo_Chamado'].'</a></td>';
             }
             echo '<td class="alicolunas">'.$linha['Descricao_Chamado'].'</td>';
-            echo '<td class="alicolunas alicolunas1" style="color:#696969">'.$linha['Solicitante_Chamado'].'</td>';
-            echo '<td class="alicolunas">'.$linha['Setor_Solicitante'].'</td>';
-            echo '<td class="alicolunas">'.$linha['Data_Abertura'].'</td>';
+            echo '<td class="alicolunas alicolunas1" style="color:#696969"><a class="linktitulo filtros" href="?pagina=filtrar_chamado&filtrosou='.$linha['Solicitante_Chamado'].'">'.$linha['Solicitante_Chamado'].'</a></td>';
+            echo '<td class="alicolunas"><a class="linktitulo filtros" href="?pagina=filtrar_chamado&filtroseu='.$linha['Setor_Solicitante'].'">'.$linha['Setor_Solicitante'].'</a></td>';
+            echo '<td class="alicolunas">'.$intervalo->format('%R%a dias %H:%I').'</td>';
             echo '<td class="alicolunas alicolunas1">'.$linha['Responsavel_Tecnico'].'</td>';
             if($linha['Prioridade'] == 'ALTA'){
             echo '<td class="alicolunas" style="color:red; font-weight:bold">'.$linha['Prioridade'].'</td>';

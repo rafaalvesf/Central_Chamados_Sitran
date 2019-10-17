@@ -31,6 +31,31 @@ $query = "SELECT * FROM Chamados WHERE Responsavel_Tecnico = '{$_SESSION['usuari
 $consulta_chamados3 = mysqli_query($conexao, $query);
 }
 
+if(isset($_GET['filtrose'])) {
+$query = "SELECT * FROM Chamados  WHERE Setor_Solicitante = '{$_GET['filtrose']}' ORDER BY Id_Chamado DESC";
+$consulta_chamados4 = mysqli_query($conexao, $query);
+}
+
+if(isset($_GET['filtroso'])) {
+$query = "SELECT * FROM Chamados WHERE Solicitante_Chamado = '{$_GET['filtroso']}' ORDER BY Id_Chamado DESC";
+$consulta_chamados5 = mysqli_query($conexao, $query);
+}
+
+if(isset($_GET['filtroseu'])) {
+$query = "SELECT * FROM Chamados WHERE Setor_Solicitante = '{$_GET['filtroseu']}' AND  Responsavel_Tecnico = '{$_SESSION['usuario_digitado']}' ORDER BY Id_Chamado DESC";
+$consulta_chamados6 = mysqli_query($conexao, $query);
+}
+
+if(isset($_GET['filtrosou'])) {
+$query = "SELECT * FROM Chamados WHERE Solicitante_Chamado = '{$_GET['filtrosou']}' AND  Responsavel_Tecnico = '{$_SESSION['usuario_digitado']}' ORDER BY Id_Chamado DESC";
+$consulta_chamados7 = mysqli_query($conexao, $query);
+}
+
+if(isset($_GET['filtrosearch'])) {
+$query = "SELECT * FROM Chamados  WHERE Descricao_Chamado LIKE '%{$_POST['insearch']}%' OR Titulo_Chamado LIKE '%{$_POST['insearch']}%'  ORDER BY Id_Chamado DESC";
+$consulta_chamados8 = mysqli_query($conexao, $query);
+}
+
 if(isset($_GET['tratativa'])) {
 $query = "SELECT Tratativa FROM Fechar_Chamado WHERE Id_Chamado_Ref = '{$_GET['tratativa']}'";
 $consulta_tratativa = mysqli_query($conexao, $query);

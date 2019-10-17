@@ -76,6 +76,7 @@ function validateForm()
 ?>
    <?php
     while ($linha = mysqli_fetch_array($consulta_chamados1)) {
+        $datab = new DateTime($linha['Data_Abertura']);
 ?>
    <?php
         if ($linha['Id_Chamado'] == $_GET['tratativa']) {
@@ -104,7 +105,7 @@ function validateForm()
 ?></h6>
                 <h4 class="ctexto flexstrutura tratativaletter" style="margin: 0 auto">Data:</h4>
                 <h6 class="formulario formulariocolor ctexto" style="margin: 0 auto"><?php
-            echo $linha['Data_Abertura'];
+            echo $datab->format('d-m-y h:i');
 ?></h6>
                 <h4 class="ctexto flexstrutura tratativaletter" style="margin: 0 auto">Responsável:</h4>
                 <h6 class="formulario formulariocolor ctexto" style="margin: 0 auto"><?php

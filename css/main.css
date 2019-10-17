@@ -76,7 +76,7 @@
   text-align:center;
 }
 footer{ 
-    height: 30px; 
+    height: 15px; 
     width: 100%;
 	  background-color: #535353; 
 	  padding:10px 0; 
@@ -85,7 +85,6 @@ footer{
 	  color: white; 
     bottom: 0;
     position: fixed;
-
 }
 
 .is-white{
@@ -543,6 +542,7 @@ fieldset:disabled a.btn {
   color: #17a2b8;
   border-color: #17a2b8;
 }
+
 
 .btn-outline-info:hover {
   color: #fff;
@@ -1599,4 +1599,16 @@ table {
 .tablesetores{
   width:500px;
   margin:0 auto;
+}
+.filtros{
+  text-decoration: none;
+}
+.search, .filsearch{
+  text-align: center;
+  margin: 0 auto;
+}
+.search{
+width: 17px;
+height: 17px;
+
 }

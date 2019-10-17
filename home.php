@@ -28,6 +28,7 @@ switch($pagina){
 	case 'listar_fechados': include 'views/listar_fechados.php'; break;
 	case 'adicionar_setores': include 'views/adicionar_setores.php'; break;
 	case 'alterar_senha': include 'views/alterar_senha.php'; break;
+	case 'filtrar_chamado': include 'views/filtrar_chamado.php'; break;
 
 
 	default: include 'views/home.php'; break;
