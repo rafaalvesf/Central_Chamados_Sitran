@@ -1,44 +1,31 @@
 <link rel="stylesheet" href="css/main.css">
-<div class="ctexto"> 
-    <h3 class="ctexto1">EM MANUTENÇÃO</h3>
-    <img src="img/image.png">
+    <div class="ctexto">
+        <h3 class="ctexto1">LIXO ELETRÔNICO</h3>
 
-   
-   
+        <a href="?pagina=adicionar_lixo" style="text-decoration:none;"><img src="img/add.ico" class="iconadd"></a>
+        <table border="0.5" class="table table-hover">
+            <tr class="thead-dark">
+                <th>Produto</th>
+                <th>Quantidade</th>
+                <th>Descrição dos Produtos</th>
+                <th>Valor Total Descartado</th>
+                <th></th>
+                <th></th>
+            </tr>
+            <?php    
+	    while($linha = mysqli_fetch_array($consulta_lixo)){
 
-
-    <?php    
-        /*
-        while($linha = mysqli_fetch_array($consulta_chamados)){
-			echo '<tr><td class="alicolunas alicolunas1">'.$linha['Id_Chamado'].'</td>';
-            echo '<td class="alicolunas alicolunas1">'.$linha['Titulo_Chamado'].'</td>';
-            echo '<td class="alicolunas">'.$linha['Descricao_Chamado'].'</td>';
-            echo '<td class="alicolunas alicolunas1" style="color:blue">'.$linha['Solicitante_Chamado'].'</td>';
-            echo '<td class="alicolunas">'.$linha['Setor_Solicitante'].'</td>';
-            echo '<td class="alicolunas">'.$linha['Data_Abertura'].'</td>';
-            echo '<td class="alicolunas alicolunas1">'.$linha['Responsavel_Tecnico'].'</td>';
-            echo '<td class="alicolunas">'.$linha['Prioridade'].'</td>';
-            echo '<td class="alicolunas">'.$linha['Status'].'</td>';
-
-            <a href="?pagina=abrir chamado" style="text-decoration:none;"><img src="img/add.ico" style="width: 5%; height: 5%; float:right"></a>
-    <table border="1" style="border:4px solid #ccc; width: 100%;">
-   <tr>
-		<th>ID</th>
-		<th>Motivo</th>
-		<th>Descrição</th>
-        <th>Solicitante</th>
-        <th>Setor</th>
-        <th>Abertura</th>
-        <th>Responsável</th>
-        <th>Prioridade</th>
-        <th>Status</th>
-	</tr>
-        */
-	?>
-	<?php
-		
+            echo '<tr><td class="alicolunas alicolunas1">'.$linha['Nome_Produto'].'</td>';
+            echo '<td class="alicolunas alicolunas1">'.$linha['Quantidade'].'</td>';    
+            echo '<td class="alicolunas">'.$linha['Descricao'].'</td>';
+            echo '<td class="alicolunas">R$ '.$linha['Valor_Aproximado'].',00</td>';
+    ?>
+            <td><a href="?pagina=adicionar_lixo&add=<?php echo $linha['Nome_Produto']; ?>"><img src="img/Add.ico" style="width:25px; height:25px"></a></td>
+            <td><a href="?pagina=adicionar_lixo&remove=<?php echo $linha['Nome_Produto']; ?>"><img src="img/remov.png" style="width:25px; height:25px"></a></td>
+                <?php
+        }
 	?>
 
+        </table>
 
-
-</div>
+    </div>

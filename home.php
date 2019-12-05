@@ -29,6 +29,8 @@ switch($pagina){
 	case 'adicionar_setores': include 'views/adicionar_setores.php'; break;
 	case 'alterar_senha': include 'views/alterar_senha.php'; break;
 	case 'filtrar_chamado': include 'views/filtrar_chamado.php'; break;
+	case 'termo_entrega': include 'views/termo_entrega.php'; break;
+	case 'adicionar_lixo': include 'views/adicionar_lixo.php'; break;
 
 
 	default: include 'views/home.php'; break;

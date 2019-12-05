@@ -49,8 +49,9 @@
             $i = 1;
             $y = 0;
             while ($linha = mysqli_fetch_array($consulta_tratativa)) {
+                $dataalt = new DateTime($linha['Data_Fechamento']);
 ?>
-                   <h6 class="formulario ctexto" style="margin: 0 auto">#<?php
+                   <h6 class="formulario ctexto" style="margin: 0 auto"><?php echo $dataalt->format('d-m-y h:i') ?>_#<?php
                 echo $i;
 ?> - <?php
                 echo $linha['Tratativa'];

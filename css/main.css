@@ -85,6 +85,7 @@ footer{
 	  color: white; 
     bottom: 0;
     position: fixed;
+
 }
 
 .is-white{
@@ -97,6 +98,7 @@ footer{
 .is-white:hover{
   border-color: transparent;
   background-color: rgb(193, 213, 224);
+  cursor: hand;
 }
 
 .is-white1{
@@ -542,7 +544,6 @@ fieldset:disabled a.btn {
   color: #17a2b8;
   border-color: #17a2b8;
 }
-
 
 .btn-outline-info:hover {
   color: #fff;
@@ -1611,4 +1612,26 @@ table {
 width: 17px;
 height: 17px;
 
+}
+.assentr{
+  float: left;
+  margin-top: 30%;
+  margin-right: 50%;
+}
+.assreceb{
+  float: right;
+  margin-top: 30%;
+}
+.assentr1{
+  float: left;
+  margin-right: 57%;
+}
+.assreceb1{
+  float: right;
+}
+.ocultadiv{
+  display: none;
+}
+.center{
+  margin-left: 32%;
 }
