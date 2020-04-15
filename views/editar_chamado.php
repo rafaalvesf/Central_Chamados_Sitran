@@ -76,14 +76,3 @@ function validateFormedit()
 </div>
 			<?php } ?>
     <?php } ?>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    

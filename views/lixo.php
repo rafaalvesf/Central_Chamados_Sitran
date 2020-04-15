@@ -27,5 +27,16 @@
 	?>
 
         </table>
-
+        <?php 
+        if(isset($_GET['excluir'])==1){ ?>
+        <form action="processa_apagar_tudo.php">
+            <br><label for="">Apagar TUDO!</label><br><br>
+            <input type="image" src="img/removs.png" style="width:25px; height:25px">
+        </form>
+        <?php
+        }
+        ?>
     </div>
+<?php
+echo "<meta HTTP-EQUIV='refresh' CONTENT='60'>";
+?>

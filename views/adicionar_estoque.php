@@ -37,6 +37,21 @@ function validateFormAddItem()
 
 
 <?php } else if(isset($_GET['add'])) { ?>
+	<script type="text/javascript">
+		function validateFormAddItem()
+		{
+			var qtditem = document.forms["form_rmv_item"]["quantidadeee"].value;
+			var qtdminitem = document.forms["form_rmv_item"]["quantidade_minimaee"].value;
+			var fornecedoritem = document.forms["form_rmv_item"]["fornecedoree"].value;
+
+			if(qtditem<=0||qtditem==""|| qtdminitem<0 ||qtdminitem=="" || fornecedoritem==null||fornecedoritem=="")
+			{
+				alert("Há campos obrigatórios em branco");
+				return false;
+
+			}
+		}
+	</script>
 	<?php while($linha = mysqli_fetch_array($consulta_estoque)){ ?>
 		<?php if($linha['Nome_Produto'] == $_GET['add']){ ?>
 
@@ -81,7 +96,7 @@ function validateFormAddItem()
 			<div class="ctexto ctexto1">
 				<h4>Adicionando <?php echo $linha['Nome_Produto']?> ao estoque.</h4>
 			</div>
-			<form method="post" action="processa_estoqueADD.php" class="formulario ctexto">
+			<form name="form_rmv_item" onsubmit="return validateFormAddItem()" method="post" action="processa_estoqueADD.php" class="formulario ctexto">
     			<br>
     			<label>Quantidade:</label><br>
     			<input type="NUMBER" name="quantidadeee" value="1" class="ctexto backformularioinput">
@@ -109,6 +124,22 @@ function validateFormAddItem()
 	<?php } ?>
 <?php } else { while($linha = mysqli_fetch_array($consulta_estoque)){ ?>
 		<?php if($linha['Nome_Produto'] == $_GET['remove']){ ?>
+			<script type="text/javascript">
+				function validateFormRmvItem()
+				{
+					var qtditemr = document.forms["form_rmve_item"]["quantidadese"].value;
+					var solicititemr = document.forms["form_rmve_item"]["solicitantese"].value;
+					var setorsolir = document.forms["form_rmve_item"]["setorse"].value;
+					var motivor = document.forms["form_rmve_item"]["descricaose"].value;
+
+					if(qtditemr<=0||qtditemr=="" || solicititemr<null ||solicititemr=="" || setorsolir=="SETOR DO SOLICITANTE" ||setorsolir=="" || setorsolir==null || motivor<null ||motivor=="")
+					{
+						alert("Preencher Todos os Campos");
+						return false;
+
+					}
+				}
+			</script>
 			<script>
 				function reapareceDiv() {
 				document.getElementById("teste").style.display = "block";
@@ -158,7 +189,7 @@ function validateFormAddItem()
 			<div class="ctexto ctexto1">
 				<h4>Retirando <?php echo $linha['Nome_Produto']?> do estoque.</h4>
 			</div>
-			<form method="post" action="processa_estoqueEXC.php" class="formulario ctexto">
+			<form  name="form_rmve_item" onsubmit="return validateFormRmvItem()" method="post" action="processa_estoqueEXC.php" class="formulario ctexto">
 			<input type="hidden" name="nome_produtose" value="<?php echo $linha['Nome_Produto']?>">
     			<br>
     			<label>Quantidade:</label><br>

@@ -1635,3 +1635,18 @@ height: 17px;
 .center{
   margin-left: 32%;
 }
+.menuchart{
+
+  width: 100%;
+  height: 100px;
+
+}
+.spacemenu{
+  display: flex;
+  flex-flow:row wrap;
+  justify-content: space-evenly;
+}
+
+#menu{
+  font-size: 11.4px;
+}

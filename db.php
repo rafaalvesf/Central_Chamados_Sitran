@@ -1,11 +1,11 @@
-<?php 
+﻿<?php 
 $servidor = "localhost";
 $usuario = "root";
-$senha = "";
+$senha = "Str0ng$";
 $db = "stock";
 
 
-$conexao = mysqli_connect($servidor, $usuario, $senha, $db) or die ('Falha ao conectar na DATABASE, Deu ruim!');
+$conexao = mysqli_connect($servidor, $usuario, $senha, $db) or die ('Não foi possível conectar a base de dados, verificar parâmetros de conexão!');
 
 $query = "SELECT * FROM Chamados ORDER BY Id_Chamado DESC";
 $consulta_chamados = mysqli_query($conexao, $query);
@@ -115,5 +115,39 @@ $query = "SELECT * FROM Saida_Estoque ORDER BY Id_Saida DESC";
 $consulta_saida_estoque = mysqli_query($conexao, $query);
 }
 
+#consultas gráficos
 
-?>
+$query = "SELECT   Setor_Solicitante,
+COUNT(Setor_Solicitante) AS Qtd
+FROM  Chamados
+GROUP BY Setor_Solicitante
+HAVING   COUNT(Setor_Solicitante) >= 0
+ORDER BY COUNT(Setor_Solicitante) DESC";
+$consulta_gsetor = mysqli_query($conexao, $query);
+
+
+$query = "SELECT   Responsavel_Tecnico,
+COUNT(Responsavel_Tecnico) AS Qtd
+FROM  Chamados
+GROUP BY Responsavel_Tecnico
+HAVING   COUNT(Responsavel_Tecnico) >= 0
+ORDER BY COUNT(Responsavel_Tecnico) DESC";
+$consulta_gresponsavel = mysqli_query($conexao, $query);
+
+$query = "SELECT   Prioridade,
+COUNT(Prioridade) AS Qtd
+FROM  Chamados
+GROUP BY Prioridade
+HAVING   COUNT(Prioridade) >= 0
+ORDER BY COUNT(Prioridade) DESC";
+$consulta_gprioridade = mysqli_query($conexao, $query);
+
+##CAMPO COMPRAS
+
+$query = "SELECT * FROM Compras ORDER BY Data_Compra DESC";
+$consulta_compras = mysqli_query($conexao, $query);
+
+if(isset($_GET['filtrarcompras'])) {
+$query = "SELECT * FROM Compras  WHERE Nome_Produto LIKE '%{$_POST['searchcomp']}%' OR Modelo_Produto LIKE '%{$_POST['searchcomp']}%' OR Serial_Number LIKE '%{$_POST['searchcomp']}%' OR Nota_Fiscal LIKE '%{$_POST['searchcomp']}%' ORDER BY Data_Compra DESC";
+$consulta_compras2= mysqli_query($conexao, $query);
+}

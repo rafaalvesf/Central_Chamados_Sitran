@@ -23,7 +23,8 @@
 				<a href="?pagina=chamados">Meus Chamados</a>
 				<a href="?pagina=estoque">Estoque</a>
 				<a href="?pagina=lixo">Lixo Eletrônico</a>
-                <a href="?pagina=manutencao">Manutenção</a>				
+				<a href="?pagina=gcompras">Compras</a>	
+                <a href="?pagina=gsetor">Relatórios</a>							
 			</div>			
 		</div>
 	</header>

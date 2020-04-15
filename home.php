@@ -21,14 +21,20 @@ switch($pagina){
 	case 'chamados': include 'views/chamados.php'; break;
 	case 'estoque': include 'views/estoque.php'; break;
 	case 'lixo': include 'views/lixo.php'; break;
-	case 'manutencao': include 'views/manutencao.php'; break;
+	case 'gsetor': include 'views/gsetor.php'; break;
+	case 'gcompras': include 'views/gcompras.php'; break;
+	case 'gresponsavel': include 'views/gresponsavel.php'; break;
+	case 'gprioridade': include 'views/gprioridade.php'; break;
 	case 'abrir_chamado': include 'views/abrir_chamado.php'; break;
+	case 'abrir_compras': include 'views/abrir_compras.php'; break;
 	case 'adicionar_estoque': include 'views/adicionar_estoque.php'; break;
 	case 'editar_chamado': include 'views/editar_chamado.php'; break;
+	case 'editar_compras': include 'views/editar_compras.php'; break;
 	case 'listar_fechados': include 'views/listar_fechados.php'; break;
 	case 'adicionar_setores': include 'views/adicionar_setores.php'; break;
 	case 'alterar_senha': include 'views/alterar_senha.php'; break;
 	case 'filtrar_chamado': include 'views/filtrar_chamado.php'; break;
+	case 'filtrar_compras': include 'views/filtrar_compras.php'; break;
 	case 'termo_entrega': include 'views/termo_entrega.php'; break;
 	case 'adicionar_lixo': include 'views/adicionar_lixo.php'; break;
 
