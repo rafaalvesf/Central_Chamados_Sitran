@@ -23,7 +23,7 @@ function validateForm()
 <link rel="stylesheet" href="css/main.css">
 <h3 class="ctexto ctexto1">ABRIR NOVO CHAMADO</h3>
 <div class="ctexto">
-    <form name="abrir_chamado_form"action="processa_chamado.php" class="formulario" onsubmit="return validateForm()" method="post">
+    <form name="abrir_chamado_form" action="processa_chamado.php" class="formulario" onsubmit="return validateForm()" method="post">
     <br>
     <label>Motivo:</label><br>
     <input class="ctexto backformularioinput" type="text" name="imotivo" placeholder="Insira o motivo do chamado" style="text-transform:uppercase">

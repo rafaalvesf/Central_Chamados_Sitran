@@ -29,10 +29,12 @@ switch($pagina){
 	case 'abrir_compras': include 'views/abrir_compras.php'; break;
 	case 'adicionar_estoque': include 'views/adicionar_estoque.php'; break;
 	case 'editar_chamado': include 'views/editar_chamado.php'; break;
+	case 'editar_usuario': include 'views/editar_usuario.php'; break;
 	case 'editar_compras': include 'views/editar_compras.php'; break;
 	case 'listar_fechados': include 'views/listar_fechados.php'; break;
 	case 'adicionar_setores': include 'views/adicionar_setores.php'; break;
 	case 'alterar_senha': include 'views/alterar_senha.php'; break;
+	case 'criar_usuario': include 'views/criar_usuario.php'; break;
 	case 'filtrar_chamado': include 'views/filtrar_chamado.php'; break;
 	case 'filtrar_compras': include 'views/filtrar_compras.php'; break;
 	case 'termo_entrega': include 'views/termo_entrega.php'; break;

@@ -28,6 +28,13 @@
 			</div>			
 		</div>
 	</header>
+	<?php 
+	while($linha = mysqli_fetch_array($consulta_usuarios1)){
+		if($linha['Perfil'] == '1'){
+			echo '<a  class="is-white1" href="?pagina=criar_usuario">Gerenciar Usuários</a>';
+		}
+	}
+	?>
 	<div class="container">
 
 	</div>

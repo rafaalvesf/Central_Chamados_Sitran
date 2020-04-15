@@ -1,7 +1,7 @@
 ﻿<?php 
 $servidor = "localhost";
 $usuario = "root";
-$senha = "Str0ng$";
+$senha = "";
 $db = "stock";
 
 
@@ -92,6 +92,9 @@ $consulta_manutencao = mysqli_query($conexao, $query);
 
 $query = "SELECT * FROM Usuarios";			
 $consulta_usuarios = mysqli_query($conexao, $query);
+
+$query = "SELECT * FROM Usuarios WHERE Nome_Usuario = '{$_SESSION['usuario_digitado']}'";			
+$consulta_usuarios1 = mysqli_query($conexao, $query);
 
 $query = "SELECT * FROM Setores ORDER BY Nome_Setor";			
 $consulta_setores = mysqli_query($conexao, $query);
