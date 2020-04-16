@@ -120,12 +120,13 @@ $consulta_saida_estoque = mysqli_query($conexao, $query);
 
 #consultas gráficos
 
-$query = "SELECT   Setor_Solicitante,
+$query = "SELECT Setor_Solicitante,
 COUNT(Setor_Solicitante) AS Qtd
 FROM  Chamados
 GROUP BY Setor_Solicitante
 HAVING   COUNT(Setor_Solicitante) >= 0
-ORDER BY COUNT(Setor_Solicitante) DESC";
+ORDER BY COUNT(Setor_Solicitante)
+ DESC";
 $consulta_gsetor = mysqli_query($conexao, $query);
 
 

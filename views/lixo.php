@@ -1,4 +1,19 @@
+<?php
+include 'db.php';
+?>
 <link rel="stylesheet" href="css/main.css">
+<script>
+function funcao1() {
+    var x;
+    var r = confirm("Você Realmente deseja EXCLUIR TODO o ESTOQUE?");
+    if (r == true) {
+        x = "você pressionou OK!";
+    } else {
+        return false;;
+    }
+    document.getElementById("demo").innerHTML = x;
+}
+</script>
     <div class="ctexto">
         <h3 class="ctexto1">LIXO ELETRÔNICO</h3>
 
@@ -25,18 +40,19 @@
                 <?php
         }
 	?>
-
         </table>
-        <?php 
-        if(isset($_GET['excluir'])==1){ ?>
-        <form action="processa_apagar_tudo.php">
-            <br><label for="">Apagar TUDO!</label><br><br>
-            <input type="image" src="img/removs.png" style="width:25px; height:25px">
-        </form>
+        
         <?php
-        }
-        ?>
+        while($linha1 = mysqli_fetch_array($consulta_usuarios1)){
+        if($linha1['Perfil'] == '1') { ?>
+        <form method="post" onsubmit="return funcao1()" action="processa_apagar_tudo.php">
+        <label>APAGAR TUDO</label>
+        <input type="image" class="logo_edit" src="img/removs.png">
+        </form>
+        <?php } 
+        }?>
     </div>
+
 <?php
 echo "<meta HTTP-EQUIV='refresh' CONTENT='60'>";
 ?>
