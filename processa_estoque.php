@@ -12,11 +12,11 @@ VALUES(UPPER('$Nome_Item'), UPPER('$Descricao_Item'), '$Quantidade_Minima', 0)";
 mysqli_query($conexao, $query);
 ################ BOT TELEGRAM ############################
 $Token = '1167014634:AAEk3g7VZasm9Bz6hv2P68uAZu8Oz1wPEuY';
-$Group_id = -443000747;
+$Group_id = -1001232835927;
 ##$GRUPO SITRAN ID = -1001232835927;
 ##$GRUP TESTE ID = -443000747;
 $User_Atual = strtoupper($_SESSION['usuario_digitado']);
-$Msgm="🤖 Olá, acabei de ver que o $User_Atual CRIOU um novo produto em nosso ESTOQUE ($Nome_Item). Agora teremos um maior controle sobre a entrada e saída desse produto em nosso estoque!";
+$Msgm="🤖 Olá, vi que o $User_Atual CRIOU um novo produto em nosso ESTOQUE ($Nome_Item). Agora teremos um maior controle sobre a entrada e saída desse produto em nosso estoque!";
 $Request_Params=[
     'chat_id' => $Group_id,
     'text' => $Msgm

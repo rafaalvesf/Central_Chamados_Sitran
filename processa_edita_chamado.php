@@ -18,7 +18,7 @@ $query = "UPDATE Chamados SET Titulo_Chamado=UPPER('$Titulo_Chamado'), Descricao
 mysqli_query($conexao, $query);
 ################ BOT TELEGRAM ############################
 $Token = '1167014634:AAEk3g7VZasm9Bz6hv2P68uAZu8Oz1wPEuY';
-$Group_id = -443000747;
+$Group_id = -1001232835927;
 ##$Group_id = -1001232835927;
 $User_Atual = strtoupper($_SESSION['usuario_digitado']);
 if($Prioridade=='ALTA'){
@@ -27,7 +27,7 @@ if($Prioridade=='ALTA'){
 if($Prioridade=='BAIXA'){
     $Urgencia = 'com prioridade BAIXA';
    }
-$Msgm="🤖 Olá, Ví que o $User_Atual EDITOU o chamado $Titulo_Chamado solicitado pelo Sr(a) $Solicitante_Chamado Sob responsabilidade do Sr. $Responsavel_Tecnico $Urgencia";
+$Msgm="🤖 Olá, vi que o $User_Atual EDITOU o chamado $Titulo_Chamado solicitado pelo Sr(a) $Solicitante_Chamado Sob responsabilidade do Sr. $Responsavel_Tecnico $Urgencia";
 $Request_Params=[
     'chat_id' => $Group_id,
     'text' => $Msgm

@@ -1,11 +1,10 @@
 ﻿<?php 
 $servidor = "localhost";
 $usuario = "root";
-$senha = "";
-$db = "stock";
+$senha = "Str0ng$";
+$db = "chti";
 
-
-$conexao = mysqli_connect($servidor, $usuario, $senha, $db) or die ('Não foi possível conectar a base de dados, verificar parâmetros de conexão!');
+$conexao = mysqli_connect($servidor, $usuario, $senha, $db, '3308') or die ('Não foi possível conectar a base de dados, verificar parâmetros de conexão!');
 
 $query = "SELECT * FROM Chamados ORDER BY Id_Chamado DESC";
 $consulta_chamados = mysqli_query($conexao, $query);

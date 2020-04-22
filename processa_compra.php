@@ -20,11 +20,11 @@ VALUES (UPPER('$Nome_Produto'), UPPER('$Marca_Produto'), UPPER('$Modelo_Produto'
 mysqli_query($conexao, $query);
 ################ BOT TELEGRAM ############################
 $Token = '1167014634:AAEk3g7VZasm9Bz6hv2P68uAZu8Oz1wPEuY';
-$Group_id = -443000747;
+$Group_id = -1001232835927;
 ##$GRUPO SITRAN ID = -1001232835927;
 ##$GRUP TESTE ID = -443000747;
 $User_Atual = strtoupper($_SESSION['usuario_digitado']);
-$Msgm="🤖 Olá, acabei de ver que o $User_Atual REGISTROU um $Nome_Produto-$Marca_Produto em nossa lista de controle de COMPRAS. Agora teremos um maior controle sobre suas informações!";
+$Msgm="🤖 Olá, vi que o $User_Atual REGISTROU um $Nome_Produto-$Marca_Produto em nossa lista de controle de COMPRAS. Agora teremos um maior controle sobre suas informações!";
 $Request_Params=[
     'chat_id' => $Group_id,
     'text' => $Msgm

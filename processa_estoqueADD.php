@@ -17,11 +17,11 @@ mysqli_query($conexao, $query);
 mysqli_query($conexao, $query1);
 ################ BOT TELEGRAM ############################
 $Token = '1167014634:AAEk3g7VZasm9Bz6hv2P68uAZu8Oz1wPEuY';
-$Group_id = -443000747;
+$Group_id = -1001232835927;
 ##$GRUPO SITRAN ID = -1001232835927;
 ##$GRUP TESTE ID = -443000747;
 $User_Atual = strtoupper($_SESSION['usuario_digitado']);
-$Msgm="🤖 Olá, acabei de ver que o $User_Atual ADICIONOU $Quantidade - $Nome_Produto(S) em nosso ESTOQUE. Agora sabemos que temos $Nome_Produto caso alguém precise!";
+$Msgm="🤖 Olá, vi que o $User_Atual ADICIONOU $Quantidade - $Nome_Produto(S) em nosso ESTOQUE. Agora sabemos que temos $Nome_Produto caso alguém precise!";
 $Request_Params=[
     'chat_id' => $Group_id,
     'text' => $Msgm

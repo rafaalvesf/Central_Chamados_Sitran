@@ -21,7 +21,7 @@ mysqli_query($conexao, $query);
 
 ################ BOT TELEGRAM ############################
 $Token = '1167014634:AAEk3g7VZasm9Bz6hv2P68uAZu8Oz1wPEuY';
-$Group_id = -443000747;
+$Group_id = -1001232835927;
 ##$Group_id = -1001232835927;
 if($Prioridade=='ALTA'){
  $Urgencia = 'e me parece ser URGENTE';
@@ -29,7 +29,7 @@ if($Prioridade=='ALTA'){
 if($Prioridade=='BAIXA'){
     $Urgencia = 'mas não me parece ser urgente';
    }
-$Msgm="🤖 Olá, acabei de ver que foi ABERTO a requisição de $Titulo_Chamado pelo Sr(a) $Solicitante_Chamado Sob responsabilidade do Sr. $Responsavel_Tecnico $Urgencia";
+$Msgm="🤖 Olá, vi que foi ABERTO a requisição de $Titulo_Chamado pelo Sr(a) $Solicitante_Chamado Sob responsabilidade do Sr. $Responsavel_Tecnico $Urgencia";
 $Request_Params=[
     'chat_id' => $Group_id,
     'text' => $Msgm
