@@ -2,8 +2,8 @@
 session_start();
 include 'db.php';
 
-$Nome = $_POST['nomeusuario'];
-$Senha = $_POST['senhausuario'];
+$Nome = trim($_POST['nomeusuario']);
+$Senha = trim($_POST['senhausuario']);
 if($_POST['perfilusuario'] == 'ADMINISTRADOR'){
 $Perfil = "1";
 }

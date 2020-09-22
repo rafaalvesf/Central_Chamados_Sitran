@@ -1,11 +1,18 @@
-﻿<?php 
+﻿<?php
+/* 
 $servidor = "localhost";
 $usuario = "root";
 $senha = "";
-$db = "stock";
-
+$db = "chti";
 
 $conexao = mysqli_connect($servidor, $usuario, $senha, $db) or die ('Não foi possível conectar a base de dados, verificar parâmetros de conexão!');
+*/
+$servidor = "localhost";
+$usuario = "root";
+$senha = "Str0ng$";
+$db = "chti";
+
+$conexao = mysqli_connect($servidor, $usuario, $senha, $db, '3308') or die ('Não foi possível conectar a base de dados, verificar parâmetros de conexão!');
 
 $query = "SELECT * FROM Chamados ORDER BY Id_Chamado DESC";
 $consulta_chamados = mysqli_query($conexao, $query);
@@ -98,6 +105,14 @@ $consulta_usuarios1 = mysqli_query($conexao, $query);
 
 $query = "SELECT * FROM Setores ORDER BY Nome_Setor";			
 $consulta_setores = mysqli_query($conexao, $query);
+
+$query = "SELECT * FROM Senhas_Email ORDER BY Email";			
+$consulta_senhas = mysqli_query($conexao, $query);
+
+if(isset($_GET['filtrogsenhas'])) {
+$query = "SELECT * FROM Senhas_Email WHERE Email = '{$_POST['emailger']}'";			
+$consulta_senhas1 = mysqli_query($conexao, $query);
+}
 
 #consultas de ESTOQUE
 if(isset($_POST['checktodos']) != 'Exibir Todos'){

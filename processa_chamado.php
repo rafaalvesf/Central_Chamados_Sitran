@@ -2,9 +2,9 @@
 session_start();
 include 'db.php';
 
-$Titulo_Chamado = strtoupper($_POST['imotivo']);
-$Descricao_Chamado = $_POST['idescricao_chamado'];
-$Solicitante_Chamado = strtoupper($_POST['isolicitante']);
+$Titulo_Chamado = strtoupper(trim($_POST['imotivo']));
+$Descricao_Chamado = trim($_POST['idescricao_chamado']);
+$Solicitante_Chamado = trim(strtoupper($_POST['isolicitante']));
 $Setor_Solicitante = $_POST['isetor_solicitante'];
 $Responsavel_Tecnico = strtoupper($_POST['idesignado']);
 $Prioridade = $_POST['iprioridade'];
@@ -21,7 +21,7 @@ mysqli_query($conexao, $query);
 
 ################ BOT TELEGRAM ############################
 $Token = '1167014634:AAEk3g7VZasm9Bz6hv2P68uAZu8Oz1wPEuY';
-$Group_id = -443000747;
+$Group_id = -1001232835927;
 ##$Group_id = -1001232835927;
 if($Prioridade=='ALTA'){
  $Urgencia = 'e me parece ser URGENTE';
@@ -29,12 +29,12 @@ if($Prioridade=='ALTA'){
 if($Prioridade=='BAIXA'){
     $Urgencia = 'mas não me parece ser urgente';
    }
-$Msgm="🤖 Olá, acabei de ver que foi ABERTO a requisição de $Titulo_Chamado pelo Sr(a) $Solicitante_Chamado Sob responsabilidade do Sr. $Responsavel_Tecnico $Urgencia";
+$Msgm="🤖 Olá, vi que foi ABERTO a requisição de $Titulo_Chamado pelo Sr(a) $Solicitante_Chamado Sob responsabilidade do Sr. $Responsavel_Tecnico $Urgencia";
 $Request_Params=[
     'chat_id' => $Group_id,
     'text' => $Msgm
 ];
-$Request_Url='https://api.telegram.org/bot'.$Token.'/sendMessage?chat_id='.$Group_id.'&text='.$Msgm.'';
+$Request_Url='https://api.telegram.org/bot'.$Token.'/sendMessage?chat_id='.$Group_id.'&text='.urlencode($Msgm).'';
 file_get_contents($Request_Url);
 ##########################################################
 

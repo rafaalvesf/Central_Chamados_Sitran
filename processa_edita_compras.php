@@ -3,15 +3,15 @@ session_start();
 include 'db.php';
 
 $Id_Compra = $_POST['Id'];
-$Nome_Produto = strtoupper($_POST['nomeP']);
-$Marca_Produto = strtoupper($_POST['marcaP']);
-$Modelo_Produto = $_POST['modeloP'];
-$Serial_Produto = $_POST['serialP'];
-$Nota_Produto = $_POST['notaP'];
+$Nome_Produto = strtoupper(trim($_POST['nomeP']));
+$Marca_Produto = strtoupper(trim($_POST['marcaP']));
+$Modelo_Produto = trim($_POST['modeloP']);
+$Serial_Produto = trim($_POST['serialP']);
+$Nota_Produto = trim($_POST['notaP']);
 $Prazo_Garantia = $_POST['garantiaP'];
 
-$Fornecedor_Produto = $_POST['fornecedorP'];
-$Destino_Produto = $_POST['destinatarioP'];
+$Fornecedor_Produto = trim($_POST['fornecedorP']);
+$Destino_Produto = trim($_POST['destinatarioP']);
 
 $Data_Compra = $_POST['dataP'];
 
@@ -23,16 +23,17 @@ Destinatario=UPPER('$Destino_Produto'), Data_Compra=UPPER('$Data_Compra') WHERE 
 mysqli_query($conexao, $query);
 ################ BOT TELEGRAM ############################
 $Token = '1167014634:AAEk3g7VZasm9Bz6hv2P68uAZu8Oz1wPEuY';
-$Group_id = -443000747;
+$Group_id = -1001232835927;
 ##$GRUPO SITRAN ID = -1001232835927;
 ##$GRUP TESTE ID = -443000747;
 $User_Atual = strtoupper($_SESSION['usuario_digitado']);
-$Msgm="🤖 Olá, acabei de ver que o $User_Atual EDITOU o produto $Nome_Produto-$Marca_Produto em nossa lista de controle de COMPRAS.";
+$Msgm="🤖 Olá, vi que o $User_Atual EDITOU o produto $Nome_Produto-$Marca_Produto em nossa lista de controle de COMPRAS.";
 $Request_Params=[
     'chat_id' => $Group_id,
     'text' => $Msgm
 ];
-$Request_Url='https://api.telegram.org/bot'.$Token.'/sendMessage?chat_id='.$Group_id.'&text='.$Msgm.'';
+$Request_Url='https://api.telegram.org/bot'.$Token.'/sendMessage?chat_id='.$Group_id.'&text='.urlencode($Msgm).'';
 file_get_contents($Request_Url);
 ##########################################################
 header('location:home.php?pagina=gcompras');
+?>

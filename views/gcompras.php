@@ -23,11 +23,9 @@
 	</tr>
 
     <?php              
-		while($linha = mysqli_fetch_array($consulta_compras)){
-           
+		while($linha = mysqli_fetch_array($consulta_compras)){           
             $datab = new DateTime($linha['Data_Compra']);
-
-
+            
             echo '<tr><td class="alicolunas alicolunas1">'.$linha['Id'].'</td>';
             echo '<td class="alicolunas alicolunas1"><a class="linktitulo" href="?pagina=abrir_compras&tratativa='.$linha['Id'].'">'.$linha['Nome_Produto'].'</a></td>';
             echo '<td class="alicolunas">'.$linha['Marca_Produto'].'</td>';

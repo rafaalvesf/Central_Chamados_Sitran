@@ -10036,3 +10036,104 @@ a.text-dark:hover, a.text-dark:focus {
   }
 }
 /*# sourceMappingURL=bootstrap.css.map */
+
+
+.arectangle{
+  position: absolute;
+  width: 354px;
+  height: 105px;
+  
+  background: #FFFFFF;
+}
+.asite{
+  position: absolute;
+width: 101px;
+height: 14px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 12px;
+line-height: 14px;
+/* identical to box height */
+
+
+color: #0D48A0;
+
+}
+.aemail{
+
+  position: absolute;
+width: 112px;
+height: 14px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 12px;
+line-height: 14px;
+/* identical to box height */
+
+
+color: #000000;
+
+}
+.atelefone{
+
+  position: absolute;
+width: 79px;
+height: 14px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 12px;
+line-height: 14px;
+/* identical to box height */
+
+
+color: #000000;
+
+}
+.alogo{
+
+  position: absolute;
+width: 69px;
+height: 80px;
+
+background: url(logo.jpg);
+
+}
+.anome{
+
+  
+position: absolute;
+width: 80px;
+height: 14px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 12px;
+line-height: 14px;
+/* identical to box height */
+
+
+color: #083467;
+
+}
+.asetor{
+  position: absolute;
+  width: 171px;
+  height: 14px;
+  
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 14px;
+  /* identical to box height */
+  
+  
+  color: #083467;
+}

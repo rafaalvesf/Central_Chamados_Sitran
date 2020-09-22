@@ -1648,5 +1648,93 @@ height: 17px;
 }
 
 #menu{
-  font-size: 13px;
+  font-size: 12px;
+}
+
+.assbox{
+  width: 371px;
+  height: 108px;
+  display: flex;
+  background: #FFFFFF;
+}
+
+.assimg{
+
+  width: 69px;
+  height: 80px;
+
+  background: url(logo.jpg);
+
+}
+.assnome{
+  width: 100px;
+  height: 20px;
+  
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 14px;
+  /* identical to box height */
+  
+  
+  color: #083467;
+
+}
+.asssetor{
+  width: 165px;
+  height: 14px;
+
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 14px;
+  /* identical to box height */
+
+
+  color: #083467;
+
+}
+.asstelefone{
+  width: 100px;
+  height: 14px;
+  
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 14px;
+  /* identical to box height */
+  
+  
+  color: #000000;
+}
+.assemail{
+  width: 112px;
+  height: 14px;
+  
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 14px;
+  /* identical to box height */
+  
+  
+  color: #000000;
+}
+.asssite{
+  width: 80px;
+  height: 14px;
+  
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 14px;
+  /* identical to box height */
+  
+  
+  color: #0D48A0;
 }

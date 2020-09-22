@@ -24,7 +24,7 @@
 				<a href="?pagina=estoque">Estoque</a>
 				<a href="?pagina=lixo">Lixo Eletrônico</a>
 				<a href="?pagina=gcompras">Compras</a>	
-                <a href="?pagina=gsetor">Relatórios</a>							
+                <a href="?pagina=gsenhas">G. Senhas</a>							
 			</div>			
 		</div>
 	</header>

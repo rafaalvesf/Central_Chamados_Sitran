@@ -2,9 +2,9 @@
 session_start();
 include 'db.php';
 $Id_Chamado = $_POST['Id_Chamado'];
-$Titulo_Chamado = strtoupper($_POST['imotivo']);
-$Descricao_Chamado = $_POST['idescricao_chamado'];
-$Solicitante_Chamado = strtoupper($_POST['isolicitante']);
+$Titulo_Chamado = strtoupper(trim($_POST['imotivo']));
+$Descricao_Chamado = trim($_POST['idescricao_chamado']);
+$Solicitante_Chamado = strtoupper(trim($_POST['isolicitante']));
 $Setor_Solicitante = $_POST['isetor_solicitante'];
 $Responsavel_Tecnico = strtoupper($_POST['idesignado']);
 $Prioridade = $_POST['iprioridade'];
@@ -18,7 +18,7 @@ $query = "UPDATE Chamados SET Titulo_Chamado=UPPER('$Titulo_Chamado'), Descricao
 mysqli_query($conexao, $query);
 ################ BOT TELEGRAM ############################
 $Token = '1167014634:AAEk3g7VZasm9Bz6hv2P68uAZu8Oz1wPEuY';
-$Group_id = -443000747;
+$Group_id = -1001232835927;
 ##$Group_id = -1001232835927;
 $User_Atual = strtoupper($_SESSION['usuario_digitado']);
 if($Prioridade=='ALTA'){
@@ -27,12 +27,14 @@ if($Prioridade=='ALTA'){
 if($Prioridade=='BAIXA'){
     $Urgencia = 'com prioridade BAIXA';
    }
-$Msgm="🤖 Olá, Ví que o $User_Atual EDITOU o chamado $Titulo_Chamado solicitado pelo Sr(a) $Solicitante_Chamado Sob responsabilidade do Sr. $Responsavel_Tecnico $Urgencia";
+$Msgm="🤖 Olá, vi que o $User_Atual EDITOU o chamado $Titulo_Chamado solicitado pelo Sr(a) $Solicitante_Chamado Sob responsabilidade do Sr. $Responsavel_Tecnico $Urgencia";
 $Request_Params=[
     'chat_id' => $Group_id,
     'text' => $Msgm
 ];
-$Request_Url='https://api.telegram.org/bot'.$Token.'/sendMessage?chat_id='.$Group_id.'&text='.$Msgm.'';
+$Request_Url='https://api.telegram.org/bot'.$Token.'/sendMessage?chat_id='.$Group_id.'&text='.urlencode($Msgm).'';
 file_get_contents($Request_Url);
 ##########################################################
+
 header('location:home.php');
+?>

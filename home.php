@@ -21,6 +21,9 @@ switch($pagina){
 	case 'chamados': include 'views/chamados.php'; break;
 	case 'estoque': include 'views/estoque.php'; break;
 	case 'lixo': include 'views/lixo.php'; break;
+	case 'gsenhas': include 'views/gsenhas.php'; break;
+	case 'gsenhasf': include 'views/gsenhasf.php'; break;
+	case 'pgsenhas': include 'processa_gerasenha.php'; break;
 	case 'gsetor': include 'views/gsetor.php'; break;
 	case 'gcompras': include 'views/gcompras.php'; break;
 	case 'gresponsavel': include 'views/gresponsavel.php'; break;

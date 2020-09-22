@@ -60,9 +60,9 @@ function validateForm()
    </select><br><br>
     <label>Prioridade:</label><br>
     <select name="iprioridade" class="backformularioinput" style="width:70px">
+        <option>BAIXA</option>
         <option>MEDIA</option>
-        <option>ALTA</option>
-        <option>BAIXA</option>        
+        <option>ALTA</option>        
     </select><br><br>
     
     <div class="ctexto">
